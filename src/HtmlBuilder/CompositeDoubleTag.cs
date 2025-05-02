@@ -5,26 +5,38 @@ namespace HtmlBuilder;
 /// <summary>
 /// Represents an HTML tag that can have child tags and attributes.
 /// </summary>
-/// <param name="name">The name of the HTML tag.</param>
-public class DoubleTagWithChildren(string name) : DoubleTag(name)
+public class CompositeDoubleTag : DoubleTag
 {
     /// <summary>
     /// The list of child tags contained within this tag.
     /// </summary>
-    private readonly List<ITag> _children = new();
+    private readonly List<object> _children = new();
+
+    /// <summary>
+    /// Represents an HTML tag that can have child tags and attributes.
+    /// </summary>
+    /// <param name="name">The name of the HTML tag.</param>
+    protected CompositeDoubleTag(string name) : base(name)
+    {
+    }
+
+    protected CompositeDoubleTag(string name, Action<CompositeDoubleTag> action) : base(name)
+    {
+        action.Invoke(this);
+    }
 
     /// <summary>
     /// Gets a read-only collection of child tags.
     /// </summary>
-    protected IEnumerable<ITag> Children => _children.AsReadOnly();
+    protected IEnumerable<object> Children => _children.AsReadOnly();
 
     /// <summary>
     /// Adds a new child tag of the specified type to this tag.
     /// </summary>
     /// <typeparam name="TTag">The type of the child tag to add.</typeparam>
     /// <param name="creator">An optional action to configure the child tag.</param>
-    /// <returns>The current <see cref="DoubleTagWithChildren"/> instance.</returns>
-    public DoubleTagWithChildren AddChild<TTag>(Action<TTag>? creator = null)
+    /// <returns>The current <see cref="CompositeDoubleTag"/> instance.</returns>
+    public CompositeDoubleTag AddChild<TTag>(Action<TTag>? creator = null)
         where TTag : ITag, new()
     {
         var x = new TTag();
@@ -36,28 +48,17 @@ public class DoubleTagWithChildren(string name) : DoubleTag(name)
     /// <summary>
     /// Adds an existing child tag to this tag.
     /// </summary>
-    /// <typeparam name="TTag">The type of the child tag to add.</typeparam>
     /// <param name="tag">The child tag to add.</param>
-    /// <returns>The current <see cref="DoubleTagWithChildren"/> instance.</returns>
-    public DoubleTagWithChildren AddChild(ITag tag)
+    /// <returns>The current <see cref="CompositeDoubleTag"/> instance.</returns>
+    public CompositeDoubleTag AddChild(ITag tag)
     {
         _children.Add(tag);
         return this;
     }
 
-    /// <summary>
-    /// Adds multiple child tags to this tag.
-    /// </summary>
-    /// <param name="children">The collection of child tags to add.</param>
-    /// <returns>The current <see cref="DoubleTagWithChildren"/> instance.</returns>
-    public DoubleTagWithChildren AddChildren(IEnumerable<ITag> children)
+    public CompositeDoubleTag AddText(string text)
     {
-        _children.AddRange(children);
-        return this;
-    }
-    public DoubleTagWithChildren AddText(string text)
-    {
-        _children.Add(new RawTextTag(text));
+        _children.Add(text);
         return this;
     }
 
@@ -74,7 +75,17 @@ public class DoubleTagWithChildren(string name) : DoubleTag(name)
         sb.Append(RenderAttributes());
         sb.AppendLine(">");
 
-        foreach (var child in Children) sb.Append(child.Render(level + 1));
+        foreach (var child in Children)
+        {
+            if (child is string text)
+            {
+                sb.Append(text);
+            }
+            else if (child is BaseTag baseTag)
+            {
+                sb.Append(baseTag.Render(level + 1));
+            }
+        }
 
         sb.AppendLine($"{indent}</{Name}>");
         return sb.ToString();

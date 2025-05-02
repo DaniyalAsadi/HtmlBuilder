@@ -6,36 +6,39 @@ namespace HtmlBuilder;
 /// <summary>
 /// Represents an HTML tag that has both opening and closing tags, and contains raw text content between them.
 /// </summary>
-public class DoubleTagWithContent : DoubleTag
+public class SimpleDoubleTag : DoubleTag
 {
-    private readonly RawTextTag _rawTextTag;
+    private string _content = string.Empty;
 
+    protected SimpleDoubleTag(string name) : base(name)
+    {
+
+    }
     /// <summary>
-    /// Initializes a new instance of the <see cref="DoubleTagWithContent"/> class.
+    /// Initializes a new instance of the <see cref="SimpleDoubleTag"/> class.
     /// </summary>
     /// <param name="name">The name of the HTML tag.</param>
-    /// <param name="content">The raw text content to be placed inside the tag. Defaults to an empty string.</param>
     /// <param name="action">An optional action to configure the tag during initialization.</param>
-    protected DoubleTagWithContent(string name, string content = "", Action<DoubleTagWithContent>? action = null) :
-        base(name)
+    protected SimpleDoubleTag(string name, Action<SimpleDoubleTag> action) : base(name)
     {
-        _rawTextTag = new RawTextTag(content);
         action?.Invoke(this);
     }
 
     /// <summary>
     /// Gets the raw text content of the tag.
     /// </summary>
-    public string Content => _rawTextTag.ToString();
+    public string Content => _content;
 
     /// <summary>
     /// Updates the raw text content of the tag.
     /// </summary>
     /// <param name="content">The new raw text content to set.</param>
     /// <returns>The updated content.</returns>
-    public string AddContent(string content)
+    public string SetContent(string content)
     {
-        return new RawTextTag(content).ToString();
+        _content = content;
+        return content;
+
     }
 
     /// <summary>
@@ -50,7 +53,6 @@ public class DoubleTagWithContent : DoubleTag
         sb.Append($"{indent}<{Name}");
         sb.Append(RenderAttributes());
         sb.Append("> ");
-
         if (!string.IsNullOrEmpty(Content)) sb.Append($"{Content} ");
         sb.AppendLine($"</{Name}>");
         return sb.ToString();
