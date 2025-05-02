@@ -6,7 +6,7 @@ namespace HtmlBuilder;
 /// <summary>
 /// Represents an HTML tag that has both opening and closing tags, and contains raw text content between them.
 /// </summary>
-public class SimpleDoubleTag : DoubleTag
+public abstract class SimpleDoubleTag : DoubleTag
 {
     private string _content = string.Empty;
 

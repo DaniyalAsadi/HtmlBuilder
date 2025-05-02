@@ -4,7 +4,7 @@ namespace HtmlBuilder;
 /// <summary>
 /// Represents a single HTML tag that does not have a closing tag (e.g., <img />, <br />).
 /// </summary>
-public class SingleTag : BaseTag
+public abstract class SingleTag : BaseTag
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="SingleTag"/> class with the specified tag name.

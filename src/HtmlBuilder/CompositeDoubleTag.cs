@@ -5,7 +5,7 @@ namespace HtmlBuilder;
 /// <summary>
 /// Represents an HTML tag that can have child tags and attributes.
 /// </summary>
-public class CompositeDoubleTag : DoubleTag
+public abstract class CompositeDoubleTag : DoubleTag
 {
     /// <summary>
     /// The list of child tags contained within this tag.
