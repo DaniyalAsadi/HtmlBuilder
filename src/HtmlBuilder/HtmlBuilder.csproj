@@ -4,6 +4,14 @@
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+	  <!-- Metadata for NuGet Package -->
+	  <PackageId>HtmlBuilder</PackageId>
+	  <Version>1.0.0</Version>
+	  <Authors>Daniyal Asadi</Authors>
+	  <Description>A library for building HTML tags programmatically in .NET.</Description>
+	  <PackageTags>HTML;HTML-builder;HTML-generator;C#;Csharp;.NET;Web-development;NuGet;Tag-generator;Dynamic-HTML</PackageTags>
+	  <RepositoryUrl>https://github.com/DaniyalAsadi/HtmlBuilder</RepositoryUrl>
+	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
 </Project>
