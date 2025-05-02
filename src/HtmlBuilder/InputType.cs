@@ -1,114 +1,117 @@
 ﻿namespace HtmlBuilder;
 
+/// <summary>
+/// Represents the types of input elements that can be used in an HTML form.
+/// </summary>
 public enum InputType
 {
     /// <summary>
-    ///     کلید
+    /// Represents a clickable button.
     /// </summary>
     Button,
 
     /// <summary>
-    ///     چک باکس
+    /// Represents a checkbox input.
     /// </summary>
     Checkbox,
 
     /// <summary>
-    ///     رنگ
+    /// Represents a color picker input.
     /// </summary>
     Color,
 
     /// <summary>
-    ///     تاریخ
+    /// Represents a date input.
     /// </summary>
     Date,
 
     /// <summary>
-    ///     تاریخ و زمان
+    /// Represents a date and time input (local timezone).
     /// </summary>
     DatetimeLocal,
 
     /// <summary>
-    ///     ایمیل
+    /// Represents an email input.
     /// </summary>
     Email,
 
     /// <summary>
-    ///     فایل
+    /// Represents a file upload input.
     /// </summary>
     File,
 
     /// <summary>
-    ///     مخفی
+    /// Represents a hidden input field.
     /// </summary>
     Hidden,
 
     /// <summary>
-    ///     عکس
+    /// Represents an image as a submit button.
     /// </summary>
     Image,
 
     /// <summary>
-    ///     ماه
+    /// Represents a month input.
     /// </summary>
     Month,
 
     /// <summary>
-    ///     شماره
+    /// Represents a numeric input.
     /// </summary>
     Number,
 
     /// <summary>
-    ///     رمز
+    /// Represents a password input.
     /// </summary>
     Password,
 
     /// <summary>
-    ///     رادیو
+    /// Represents a radio button input.
     /// </summary>
     Radio,
 
     /// <summary>
-    ///     رنج
+    /// Represents a range slider input.
     /// </summary>
     Range,
 
     /// <summary>
-    ///     ریست
+    /// Represents a reset button.
     /// </summary>
     Reset,
 
     /// <summary>
-    ///     جستجو
+    /// Represents a search input.
     /// </summary>
     Search,
 
     /// <summary>
-    ///     تایید
+    /// Represents a submit button.
     /// </summary>
     Submit,
 
     /// <summary>
-    ///     تلفن
+    /// Represents a telephone number input.
     /// </summary>
     Tel,
 
     /// <summary>
-    ///     متن
+    /// Represents a single-line text input.
     /// </summary>
     Text,
 
     /// <summary>
-    ///     زمان
+    /// Represents a time input.
     /// </summary>
     Time,
 
     /// <summary>
-    ///     آدرس اینترنتی
+    /// Represents a URL input.
     /// </summary>
     Url,
 
     /// <summary>
-    ///     هفته
+    /// Represents a week input.
     /// </summary>
     Week
 }

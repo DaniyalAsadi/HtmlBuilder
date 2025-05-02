@@ -1,8 +1,3 @@
 ﻿namespace HtmlBuilder.Tags;
 
-public class HR : SingleTag
-{
-    public HR() : base("hr")
-    {
-    }
-}
+public class Hr() : SingleTag("hr");

@@ -3,20 +3,27 @@
 namespace HtmlBuilder;
 
 /// <summary>
-///     <div>
-///         <h1></h1>
-///     </div>
+/// Represents an HTML tag that can have child tags and attributes.
 /// </summary>
-public class DoubleTagWithChildren : DoubleTag
+/// <param name="name">The name of the HTML tag.</param>
+public class DoubleTagWithChildren(string name) : DoubleTag(name)
 {
+    /// <summary>
+    /// The list of child tags contained within this tag.
+    /// </summary>
     private readonly List<ITag> _children = new();
 
-    public DoubleTagWithChildren(string name) : base(name)
-    {
-    }
-
+    /// <summary>
+    /// Gets a read-only collection of child tags.
+    /// </summary>
     protected IEnumerable<ITag> Children => _children.AsReadOnly();
 
+    /// <summary>
+    /// Adds a new child tag of the specified type to this tag.
+    /// </summary>
+    /// <typeparam name="TTag">The type of the child tag to add.</typeparam>
+    /// <param name="creator">An optional action to configure the child tag.</param>
+    /// <returns>The current <see cref="DoubleTagWithChildren"/> instance.</returns>
     public DoubleTagWithChildren AddChild<TTag>(Action<TTag>? creator = null)
         where TTag : ITag
     {
@@ -26,6 +33,12 @@ public class DoubleTagWithChildren : DoubleTag
         return this;
     }
 
+    /// <summary>
+    /// Adds an existing child tag to this tag.
+    /// </summary>
+    /// <typeparam name="TTag">The type of the child tag to add.</typeparam>
+    /// <param name="tag">The child tag to add.</param>
+    /// <returns>The current <see cref="DoubleTagWithChildren"/> instance.</returns>
     public DoubleTagWithChildren AddChild<TTag>(ITag tag)
         where TTag : ITag
     {
@@ -33,22 +46,28 @@ public class DoubleTagWithChildren : DoubleTag
         return this;
     }
 
+    /// <summary>
+    /// Adds multiple child tags to this tag.
+    /// </summary>
+    /// <param name="children">The collection of child tags to add.</param>
+    /// <returns>The current <see cref="DoubleTagWithChildren"/> instance.</returns>
     public DoubleTagWithChildren AddChildren(IEnumerable<ITag> children)
     {
         _children.AddRange(children);
         return this;
     }
 
+    /// <summary>
+    /// Renders the HTML representation of this tag and its children.
+    /// </summary>
+    /// <param name="level">The indentation level for rendering.</param>
+    /// <returns>A string containing the rendered HTML.</returns>
     public override string Render(int level)
     {
         var indent = new string(' ', level * 4);
         var sb = new StringBuilder();
         sb.Append($"{indent}<{Name}");
-        foreach (var attribute in Attributes)
-            if (attribute.Value is null)
-                sb.Append($" {attribute.Key}");
-            else
-                sb.Append($" {attribute.Key}=\"{attribute.Value}\"");
+        sb.Append(RenderAttributes());
         sb.AppendLine(">");
 
         foreach (var child in Children) sb.Append(child.Render(level + 1));
@@ -57,6 +76,10 @@ public class DoubleTagWithChildren : DoubleTag
         return sb.ToString();
     }
 
+    /// <summary>
+    /// Returns the string representation of this tag, including its children.
+    /// </summary>
+    /// <returns>A string containing the rendered HTML.</returns>
     public override string ToString()
     {
         return Render(0);
