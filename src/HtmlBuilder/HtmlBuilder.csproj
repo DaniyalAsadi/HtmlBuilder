@@ -14,4 +14,14 @@
 	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Tags\NewFolder\**" />
+    <EmbeddedResource Remove="Tags\NewFolder\**" />
+    <None Remove="Tags\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Tags\" />
+  </ItemGroup>
+
 </Project>
