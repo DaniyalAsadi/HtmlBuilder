@@ -25,9 +25,9 @@ public class DoubleTagWithChildren(string name) : DoubleTag(name)
     /// <param name="creator">An optional action to configure the child tag.</param>
     /// <returns>The current <see cref="DoubleTagWithChildren"/> instance.</returns>
     public DoubleTagWithChildren AddChild<TTag>(Action<TTag>? creator = null)
-        where TTag : ITag
+        where TTag : ITag, new()
     {
-        var x = Activator.CreateInstance<TTag>();
+        var x = new TTag();
         creator?.Invoke(x);
         _children.Add(x);
         return this;
@@ -39,8 +39,7 @@ public class DoubleTagWithChildren(string name) : DoubleTag(name)
     /// <typeparam name="TTag">The type of the child tag to add.</typeparam>
     /// <param name="tag">The child tag to add.</param>
     /// <returns>The current <see cref="DoubleTagWithChildren"/> instance.</returns>
-    public DoubleTagWithChildren AddChild<TTag>(ITag tag)
-        where TTag : ITag
+    public DoubleTagWithChildren AddChild(ITag tag)
     {
         _children.Add(tag);
         return this;
@@ -54,6 +53,11 @@ public class DoubleTagWithChildren(string name) : DoubleTag(name)
     public DoubleTagWithChildren AddChildren(IEnumerable<ITag> children)
     {
         _children.AddRange(children);
+        return this;
+    }
+    public DoubleTagWithChildren AddText(string text)
+    {
+        _children.Add(new RawTextTag(text));
         return this;
     }
 

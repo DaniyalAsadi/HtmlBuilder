@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Represents an HTML &lt;textarea&gt; element.
-/// </summary>
+/// </summary>  
 /// <remarks>
 /// This class is used to generate a &lt;textarea&gt; element in an HTML document.
 /// It inherits from <see cref="DoubleTagWithContent"/> to allow content within the tag.
