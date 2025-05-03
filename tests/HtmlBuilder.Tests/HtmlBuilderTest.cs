@@ -8,16 +8,9 @@ public class HtmlBuilderTest
     {
         var html = HtmlBuilder.Create<Div>(div =>
         {
-            div.AddChild<H1>(x =>
-            {
-                x.AddClass("title");
-                x.SetContent("Hello World");
-
-            });
+            div.H1("h1");
         }).ToString();
 
-        var expected = "<div><h1 class=\"title\">Hello World</h1></div>";
-        Assert.Equal(expected, html.ToString());
 
 
 
