@@ -5,7 +5,7 @@ namespace HtmlBuilder;
 /// <summary>
 /// Represents an HTML tag that can have child tags and attributes.
 /// </summary>
-public abstract class CompositeDoubleTag : DoubleTag
+public abstract class DoubleTagWithChildren : DoubleTag
 {
     /// <summary>
     /// The list of child tags contained within this tag.
@@ -16,11 +16,11 @@ public abstract class CompositeDoubleTag : DoubleTag
     /// Represents an HTML tag that can have child tags and attributes.
     /// </summary>
     /// <param name="name">The name of the HTML tag.</param>
-    protected CompositeDoubleTag(string name) : base(name)
+    protected DoubleTagWithChildren(string name) : base(name)
     {
     }
 
-    protected CompositeDoubleTag(string name, Action<CompositeDoubleTag> action) : base(name)
+    protected DoubleTagWithChildren(string name, Action<DoubleTagWithChildren> action) : base(name)
     {
         action.Invoke(this);
     }
@@ -35,9 +35,9 @@ public abstract class CompositeDoubleTag : DoubleTag
     /// </summary>
     /// <typeparam name="TTag">The type of the child tag to add.</typeparam>
     /// <param name="creator">An optional action to configure the child tag.</param>
-    /// <returns>The current <see cref="CompositeDoubleTag"/> instance.</returns>
-    public CompositeDoubleTag AddChild<TTag>(Action<TTag>? creator = null)
-        where TTag : ITag, new()
+    /// <returns>The current <see cref="DoubleTagWithChildren"/> instance.</returns>
+    public DoubleTagWithChildren AddChild<TTag>(Action<TTag>? creator = null)
+        where TTag : IPhrasingContent, new()
     {
         var x = new TTag();
         creator?.Invoke(x);
@@ -49,14 +49,14 @@ public abstract class CompositeDoubleTag : DoubleTag
     /// Adds an existing child tag to this tag.
     /// </summary>
     /// <param name="tag">The child tag to add.</param>
-    /// <returns>The current <see cref="CompositeDoubleTag"/> instance.</returns>
-    public CompositeDoubleTag AddChild(ITag tag)
+    /// <returns>The current <see cref="DoubleTagWithChildren"/> instance.</returns>
+    public DoubleTagWithChildren AddChild(ITag tag)
     {
         _children.Add(tag);
         return this;
     }
 
-    public CompositeDoubleTag AddText(string text)
+    public DoubleTagWithChildren AddText(string text)
     {
         _children.Add(text);
         return this;
@@ -77,13 +77,14 @@ public abstract class CompositeDoubleTag : DoubleTag
 
         foreach (var child in Children)
         {
-            if (child is string text)
+            switch (child)
             {
-                sb.Append(text);
-            }
-            else if (child is BaseTag baseTag)
-            {
-                sb.Append(baseTag.Render(level + 1));
+                case string text:
+                    sb.Append(text);
+                    break;
+                case BaseTag baseTag:
+                    sb.Append(baseTag.Render(level + 1));
+                    break;
             }
         }
 
