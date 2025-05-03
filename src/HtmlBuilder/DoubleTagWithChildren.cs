@@ -10,7 +10,7 @@ public abstract class DoubleTagWithChildren : DoubleTag
     /// <summary>
     /// The list of child tags contained within this tag.
     /// </summary>
-    private readonly List<object> _children = new();
+    private readonly List<ITag> _children = new();
 
     /// <summary>
     /// Represents an HTML tag that can have child tags and attributes.
@@ -28,7 +28,7 @@ public abstract class DoubleTagWithChildren : DoubleTag
     /// <summary>
     /// Gets a read-only collection of child tags.
     /// </summary>
-    protected IEnumerable<object> Children => _children.AsReadOnly();
+    protected IEnumerable<ITag> Children => _children.AsReadOnly();
 
     /// <summary>
     /// Adds a new child tag of the specified type to this tag.
@@ -37,7 +37,7 @@ public abstract class DoubleTagWithChildren : DoubleTag
     /// <param name="creator">An optional action to configure the child tag.</param>
     /// <returns>The current <see cref="DoubleTagWithChildren"/> instance.</returns>
     public DoubleTagWithChildren AddChild<TTag>(Action<TTag>? creator = null)
-        where TTag : IPhrasingContent, new()
+        where TTag : ITag, new()
     {
         var x = new TTag();
         creator?.Invoke(x);
@@ -56,11 +56,6 @@ public abstract class DoubleTagWithChildren : DoubleTag
         return this;
     }
 
-    public DoubleTagWithChildren AddText(string text)
-    {
-        _children.Add(text);
-        return this;
-    }
 
     /// <summary>
     /// Renders the HTML representation of this tag and its children.
@@ -77,17 +72,8 @@ public abstract class DoubleTagWithChildren : DoubleTag
 
         foreach (var child in Children)
         {
-            switch (child)
-            {
-                case string text:
-                    sb.Append(text);
-                    break;
-                case BaseTag baseTag:
-                    sb.Append(baseTag.Render(level + 1));
-                    break;
-            }
+            sb.Append(child.Render(level + 1));
         }
-
         sb.AppendLine($"{indent}</{Name}>");
         return sb.ToString();
     }

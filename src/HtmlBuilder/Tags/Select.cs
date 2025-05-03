@@ -1,0 +1,20 @@
+﻿
+namespace HtmlBuilder.Tags;
+
+public class Select : DoubleTagWithChildren
+{
+    public Select() : base("select")
+    {
+    }
+
+    public void SetSelected(string value)
+    {
+        foreach (var child in Children.OfType<Option>())
+        {
+            if (child.GetAttribute("key") == value)
+            {
+                child.SetSelected();
+            }
+        }
+    }
+}
