@@ -1,11 +1,6 @@
 ﻿namespace HtmlBuilder.Tags;
 
-public class H1 : DoubleTagWithContent
-{
-    public H1() : base("h1")
-    {
-    }
-}
+public class H1() : DoubleTagWithContent("h1");
 
 public static class H1Extensions
 {

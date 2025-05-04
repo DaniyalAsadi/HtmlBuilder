@@ -1,9 +1,4 @@
 ﻿
 namespace HtmlBuilder.Tags;
 
-public class Label : DoubleTagWithContent
-{
-    public Label() : base("label")
-    {
-    }
-}
+public class Label() : DoubleTagWithContent("label");

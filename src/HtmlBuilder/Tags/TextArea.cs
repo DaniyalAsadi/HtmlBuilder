@@ -1,9 +1,4 @@
 ﻿
 namespace HtmlBuilder.Tags;
 
-public class TextArea : DoubleTagWithContent
-{
-    public TextArea() : base("textarea")
-    {
-    }
-}
+public class TextArea() : DoubleTagWithContent("textarea");

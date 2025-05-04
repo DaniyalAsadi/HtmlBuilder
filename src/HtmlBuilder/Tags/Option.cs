@@ -1,24 +1,20 @@
 ﻿
 namespace HtmlBuilder.Tags;
 
-public class Option : DoubleTagWithContent
+public class Option() : DoubleTagWithContent("option")
 {
-    public Option() : base("option")
-    {
-    }
-
     public void SetSelected()
     {
-        AddAttribute("selected");
+        this.AddAttribute("selected");
     }
 
     public void SetValue(string value)
     {
-        AddAttribute("value", value);
+        this.AddAttribute("value", value);
     }
 
     public string? GetAttribute(string key)
     {
-        return Attributes.GetValueOrDefault(key);
+        return this.Attributes.GetValueOrDefault(key);
     }
 }

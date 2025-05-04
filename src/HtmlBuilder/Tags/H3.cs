@@ -1,9 +1,4 @@
 ﻿
 namespace HtmlBuilder.Tags;
 
-public class H3 : DoubleTagWithContent
-{
-    public H3() : base("h3")
-    {
-    }
-}
+public class H3() : DoubleTagWithContent("h3");

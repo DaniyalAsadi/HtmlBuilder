@@ -14,18 +14,20 @@
 	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
+
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.Razor" Version="6.0.36" />
   </ItemGroup>
 
+
   <ItemGroup>
-    <Folder Include="Tags\Interactive Tags\" />
-    <Folder Include="Tags\Form Tags\" />
-    <Folder Include="Tags\Styling Tags\" />
-    <Folder Include="Tags\Table Tags\" />
-    <Folder Include="Tags\Script and Meta Tags\" />
-    <Folder Include="Tags\Text Content Tags\" />
-    <Folder Include="Tags\Media Tags\" />
+    <Folder Include="Tags\FormTags\" />
+    <Folder Include="Tags\InteractiveTags\" />
+    <Folder Include="Tags\MediaTags\" />
+    <Folder Include="Tags\ScriptAndMetaTags\" />
+    <Folder Include="Tags\StylingTags\" />
+    <Folder Include="Tags\TableTags\" />
+    <Folder Include="Tags\TextContentTag\" />
   </ItemGroup>
 
 </Project>
