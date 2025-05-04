@@ -416,17 +416,21 @@ dotnet_naming_rule.parameters_rule.symbols              = parameters_group
 dotnet_naming_rule.parameters_rule.style                = camel_case_style
 dotnet_naming_rule.parameters_rule.severity             = warning
 
+
+csharp_style_namespace_declarations = file_scoped:error
+
+csharp_style_namespace_declarations 
 # Suppress CS0414 warning
 dotnet_diagnostic.cs0414.severity = error
-dotnet_diagnostic.CS8618.severity = warning
-dotnet_diagnostic.IDE0052.severity = warning
+dotnet_diagnostic.CS8618.severity = error
+dotnet_diagnostic.IDE0052.severity = error
 dotnet_diagnostic.CS8634.severity = error
 dotnet_diagnostic.CS0109.severity = error
 dotnet_diagnostic.CS0114.severity = error
-dotnet_diagnostic.CS0612.severity = none
+dotnet_diagnostic.CS0612.severity = error
 dotnet_diagnostic.CS0642.severity = error
 dotnet_diagnostic.CS8073.severity = error
-dotnet_diagnostic.CS8524.severity = warning
+dotnet_diagnostic.CS8524.severity = error
 dotnet_diagnostic.CS8613.severity = error
 
 # Enforce switch expressions
