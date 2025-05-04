@@ -15,13 +15,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Tags\NewFolder\**" />
-    <EmbeddedResource Remove="Tags\NewFolder\**" />
-    <None Remove="Tags\NewFolder\**" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Razor" Version="6.0.36" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.CodeAnalysis.Razor" Version="6.0.36" />
+    <Folder Include="Tags\Interactive Tags\" />
+    <Folder Include="Tags\Form Tags\" />
+    <Folder Include="Tags\Styling Tags\" />
+    <Folder Include="Tags\Table Tags\" />
+    <Folder Include="Tags\Script and Meta Tags\" />
+    <Folder Include="Tags\Text Content Tags\" />
+    <Folder Include="Tags\Media Tags\" />
   </ItemGroup>
 
 </Project>
