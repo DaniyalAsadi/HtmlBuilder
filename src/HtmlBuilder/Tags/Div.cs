@@ -1,3 +1,0 @@
-﻿namespace HtmlBuilder.Tags;
-
-public class Div() : DoubleTagWithChildren("div");
