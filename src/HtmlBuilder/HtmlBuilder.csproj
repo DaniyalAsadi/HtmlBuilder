@@ -16,6 +16,7 @@
 
 
   <ItemGroup>
+    <Folder Include="Enums\" />
     <Folder Include="Tags\InteractiveTags\" />
     <Folder Include="Tags\MediaTags\" />
     <Folder Include="Tags\ScriptAndMetaTags\" />
