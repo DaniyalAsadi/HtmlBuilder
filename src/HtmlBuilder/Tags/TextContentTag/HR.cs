@@ -1,3 +1,3 @@
-namespace HtmlBuilder.Tags.TextContentTag;
+﻿namespace HtmlBuilder.Tags.TextContentTag;
 
-public class HR() : SingleTag("hr");
+public class Hr() : SingleTag("hr");
