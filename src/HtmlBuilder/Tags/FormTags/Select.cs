@@ -1,6 +1,4 @@
-﻿
-namespace HtmlBuilder.Tags;
-
+namespace HtmlBuilder.Tags.FormTags;
 public class Select() : DoubleTagWithChildren("select")
 {
     public void SetSelected(string value)

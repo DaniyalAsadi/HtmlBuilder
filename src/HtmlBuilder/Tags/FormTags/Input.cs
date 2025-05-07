@@ -1,6 +1,5 @@
-﻿
-namespace HtmlBuilder.Tags;
 
+namespace HtmlBuilder.Tags.FormTags;
 public class Input() : SingleTag("input")
 {
     public InputType Type { get; set; }

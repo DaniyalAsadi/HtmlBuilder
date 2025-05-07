@@ -1,4 +1,4 @@
-﻿using System.Text;
+using System.Text;
 
 namespace HtmlBuilder;
 
@@ -67,7 +67,7 @@ public abstract class DoubleTagWithChildren : DoubleTag
         var indent = new string(' ', level * 4);
         var sb = new StringBuilder();
         sb.Append($"{indent}<{Name}");
-        sb.Append(RenderAttributes());
+        sb.Append(this.RenderAttributes());
         sb.AppendLine(">");
 
         foreach (var child in Children)

@@ -1,5 +1,4 @@
-﻿
-namespace HtmlBuilder.Tags;
+namespace HtmlBuilder.Tags.FormTags;
 
 public class Option() : DoubleTagWithContent("option")
 {
