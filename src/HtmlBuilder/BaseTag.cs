@@ -64,7 +64,7 @@ public abstract class BaseTag(string name) : ITag
     /// </summary>
     /// <param name="attributes">A collection of key-value pairs representing the attributes.</param>
     /// <returns>The current instance of the tag.</returns>
-    public ITag AddAttributes(IEnumerable<KeyValuePair<string, string?>> attributes)
+    public BaseTag AddAttributes(IEnumerable<KeyValuePair<string, string?>> attributes)
     {
         foreach (var attribute in attributes) AddAttribute(attribute.Key, attribute.Value);
         return this;
@@ -75,7 +75,7 @@ public abstract class BaseTag(string name) : ITag
     /// </summary>
     /// <param name="id">The ID value to set.</param>
     /// <returns>The current instance of the tag.</returns>
-    public ITag SetId(string id)
+    public BaseTag SetId(string id)
     {
         Attributes["id"] = id;
         return this;
@@ -86,9 +86,11 @@ public abstract class BaseTag(string name) : ITag
     /// </summary>
     /// <param name="class">The CSS class to add.</param>
     /// <returns>The current instance of the tag.</returns>
-    public ITag AddClass(string @class)
+    public BaseTag AddClass(string @class)
     {
         Classes.Add(@class);
         return this;
     }
+
 }
+

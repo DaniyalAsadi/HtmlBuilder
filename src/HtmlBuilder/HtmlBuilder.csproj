@@ -22,7 +22,7 @@
     <Folder Include="Tags\ScriptAndMetaTags\" />
     <Folder Include="Tags\StylingTags\" />
     <Folder Include="Tags\TableTags\" />
-    <Folder Include="Utility\Extensions\" />
+    <Folder Include="Utility\Extensions\NewFolder\" />
   </ItemGroup>
 
 </Project>
