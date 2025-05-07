@@ -1,9 +1,9 @@
-namespace HtmlBuilder;
+﻿namespace HtmlBuilder;
 
 /// <summary>
 /// Specifies where to open the linked document when the anchor (&lt;a&gt;) element is clicked.
 /// </summary>
-public enum AnchorTarget
+public enum ATarget
 {
     /// <summary>
     /// Opens the link in the same frame or tab. (default)
