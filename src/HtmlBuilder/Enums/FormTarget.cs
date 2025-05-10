@@ -1,9 +1,9 @@
-﻿namespace HtmlBuilder;
+﻿namespace HtmlBuilder.Enums;
 
 /// <summary>
-/// Specifies where to open the linked document when the anchor (&lt;a&gt;) element is clicked.
+/// Specifies where to open the response when the form is submitted.
 /// </summary>
-public enum ATarget
+public enum FormTarget
 {
     /// <summary>
     /// Opens the link in the same frame or tab. (default)

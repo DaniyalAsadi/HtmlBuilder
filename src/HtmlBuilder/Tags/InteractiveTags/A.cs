@@ -1,11 +1,11 @@
-namespace HtmlBuilder.Tags.InteractiveTags;
+﻿namespace HtmlBuilder.Tags.InteractiveTags;
 
 public class A() : DoubleTagWithContent("a")
 {
     public string Href { get; private set; } = string.Empty;
     public string Rel { get; private set; } = string.Empty;
     public string Type { get; private set; } = string.Empty;
-    public string Target { get; private set; } = string.Empty;
+    public ATarget Target { get; private set; } = ATarget._Self;
 
 
     public A SetHref(string href)
@@ -29,10 +29,10 @@ public class A() : DoubleTagWithContent("a")
         return this;
     }
 
-    public A SetTarget(string target)
+    public A SetTarget(ATarget target)
     {
         this.Target = target;
-        this.AddAttribute("target", target);
+        this.AddAttribute("target", target.ToString().ToLower());
         return this;
     }
 
