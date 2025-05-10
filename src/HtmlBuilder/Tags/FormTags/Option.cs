@@ -1,15 +1,30 @@
-namespace HtmlBuilder.Tags.FormTags;
+﻿namespace HtmlBuilder.Tags.FormTags;
 
 public class Option() : DoubleTagWithContent("option")
 {
-    public void SetSelected()
+    public string Value { get; private set; } = string.Empty;
+    public bool IsSelected { get; private set; } = false;
+    public bool IsDisabled { get; private set; } = false;
+
+    public Option SetValue(string value)
     {
-        this.AddAttribute("selected");
+        this.Value = value;
+        this.AddAttribute("value", value);
+        return this;
     }
 
-    public void SetValue(string value)
+    public Option SetSelected()
     {
-        this.AddAttribute("value", value);
+        this.IsSelected = true;
+        this.AddAttribute("selected");
+        return this;
+    }
+
+    public Option SetDisabled()
+    {
+        this.IsDisabled = true;
+        this.AddAttribute("disabled");
+        return this;
     }
 
     public string? GetAttribute(string key)
