@@ -21,13 +21,6 @@
 
 
   <ItemGroup>
-    <Folder Include="Tags\FormTags\" />
-    <Folder Include="Enums\" />
-    <Folder Include="Tags\InteractiveTags\" />
-    <Folder Include="Tags\MediaTags\" />
-    <Folder Include="Tags\ScriptAndMetaTags\" />
-    <Folder Include="Tags\StylingTags\" />
-    <Folder Include="Tags\TableTags\" />
     <Folder Include="Utility\Extensions\NewFolder\" />
   </ItemGroup>
 
