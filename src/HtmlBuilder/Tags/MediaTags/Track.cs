@@ -1,4 +1,6 @@
-﻿namespace HtmlBuilder.Tags.MediaTags;
+﻿using HtmlBuilder.Enums;
+
+namespace HtmlBuilder.Tags.MediaTags;
 
 public class Track() : SingleTag("track")
 {

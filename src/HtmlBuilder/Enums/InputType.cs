@@ -1,4 +1,4 @@
-﻿namespace HtmlBuilder;
+﻿namespace HtmlBuilder.Enums;
 
 /// <summary>
 /// Represents the types of input elements that can be used in an HTML form.

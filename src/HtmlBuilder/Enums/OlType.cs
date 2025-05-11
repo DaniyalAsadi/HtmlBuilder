@@ -1,4 +1,4 @@
-namespace HtmlBuilder;
+﻿namespace HtmlBuilder.Enums;
 
 /// <summary>
 /// Defines the type of numbering used in an ordered list (&lt;ol&gt;) element.

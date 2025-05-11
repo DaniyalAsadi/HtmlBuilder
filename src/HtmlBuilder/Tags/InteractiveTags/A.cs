@@ -1,11 +1,13 @@
-﻿namespace HtmlBuilder.Tags.InteractiveTags;
+﻿using HtmlBuilder.Enums;
+
+namespace HtmlBuilder.Tags.InteractiveTags;
 
 public class A() : DoubleTagWithContent("a")
 {
     public string Href { get; private set; } = string.Empty;
     public string Rel { get; private set; } = string.Empty;
     public string Type { get; private set; } = string.Empty;
-    public ATarget Target { get; private set; } = ATarget._Self;
+    public ATarget Target { get; private set; } = ATarget.Self;
 
 
     public A SetHref(string href)

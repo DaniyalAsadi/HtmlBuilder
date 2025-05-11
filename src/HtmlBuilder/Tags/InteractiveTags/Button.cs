@@ -1,4 +1,6 @@
-﻿namespace HtmlBuilder.Tags.InteractiveTags;
+﻿using HtmlBuilder.Enums;
+
+namespace HtmlBuilder.Tags.InteractiveTags;
 
 public class Button() : DoubleTagWithContent("button")
 {

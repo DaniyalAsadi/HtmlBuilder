@@ -1,4 +1,4 @@
-﻿namespace HtmlBuilder;
+﻿namespace HtmlBuilder.Enums;
 public enum TrackKind
 {
     Subtitles,

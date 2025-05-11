@@ -1,4 +1,4 @@
-﻿namespace HtmlBuilder;
+﻿namespace HtmlBuilder.Enums;
 
 /// <summary>
 /// Specifies where to open the linked document when the anchor (&lt;a&gt;) element is clicked.
@@ -8,20 +8,20 @@ public enum ATarget
     /// <summary>
     /// Opens the link in the same frame or tab. (default)
     /// </summary>
-    _Self,
+    Self,
 
     /// <summary>
     /// Opens the link in a new tab or window.
     /// </summary>
-    _Blank,
+    Blank,
 
     /// <summary>
     /// Opens the link in the parent frame.
     /// </summary>
-    _Parent,
+    Parent,
 
     /// <summary>
     /// Opens the link in the full body of the window, exiting all frames.
     /// </summary>
-    _Top
+    Top
 }
