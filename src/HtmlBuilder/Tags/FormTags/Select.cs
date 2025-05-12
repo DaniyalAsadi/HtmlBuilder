@@ -1,4 +1,4 @@
-namespace HtmlBuilder.Tags.FormTags;
+﻿namespace HtmlBuilder.Tags.FormTags;
 public class Select() : DoubleTagWithChildren("select")
 {
     public string SelectName { get; private set; } = string.Empty;
@@ -30,7 +30,7 @@ public class Select() : DoubleTagWithChildren("select")
         this.AddAttribute("multiple");
     }
 
-    public void SetSelected(string value)
+    internal void SetSelected(string value)
     {
         foreach (var child in this.Children.OfType<Option>())
         {
