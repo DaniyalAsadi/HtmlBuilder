@@ -1,4 +1,4 @@
-using HtmlBuilder.Enums;
+﻿using HtmlBuilder.Enums;
 
 namespace HtmlBuilder.Tags.FormTags;
 public static class FormExtensions
@@ -15,9 +15,9 @@ public static class FormExtensions
         return tag;
     }
 
-    public static Form SetEnctype(this Form tag, FormEncryptType encryptType)
+    public static Form SetEncryptType(this Form tag, FormEncryptType encryptType)
     {
-        tag.SetEnctype(encryptType);
+        tag.SetEncryptType(encryptType);
         return tag;
     }
 

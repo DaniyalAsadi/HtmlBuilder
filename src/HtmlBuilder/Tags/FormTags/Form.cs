@@ -21,10 +21,10 @@ public class Form() : DoubleTagWithChildren("form")
         this.AddAttribute("method", method.ToHtmlString());
     }
 
-    internal void SetEnctype(FormEncryptType encryptType)
+    internal void SetEncryptType(FormEncryptType encryptType)
     {
         this.EncryptType = encryptType;
-        this.AddAttribute("encryptType", encryptType.ToHtmlString());
+        this.AddAttribute("enctype", encryptType.ToHtmlString());
     }
 
     internal void SetTarget(FormTarget target)
