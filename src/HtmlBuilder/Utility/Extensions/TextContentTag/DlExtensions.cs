@@ -3,4 +3,10 @@ using System;
 namespace HtmlBuilder.Tags.TextContentTag;
 public static class DlExtensions
 {
+    public static Dl Dl(this DoubleTagWithChildren doubleTag, Action<Dl> action)
+    {
+        Dl tag = new Dl();
+        action(tag);
+        return tag;
+    }
 }

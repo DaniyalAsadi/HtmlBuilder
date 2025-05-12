@@ -1,6 +1,42 @@
-using System;
+﻿using HtmlBuilder.Enums;
 
 namespace HtmlBuilder.Tags.FormTags;
 public static class FormExtensions
 {
+    public static Form Form(this DoubleTagWithChildren doubleTag, Action<Form> action)
+    {
+        Form tag = new Form();
+        action(tag);
+        return tag;
+    }
+
+    public static Form SetAction(this Form tag, string action)
+    {
+        tag.SetAction(action);
+        return tag;
+    }
+
+    public static Form SetMethod(this Form tag, FormMethod method)
+    {
+        tag.SetMethod(method);
+        return tag;
+    }
+
+    public static Form SetEnctype(this Form tag, FormEnctype enctype)
+    {
+        tag.SetEnctype(enctype);
+        return tag;
+    }
+
+    public static Form SetTarget(this Form tag, FormTarget target)
+    {
+        tag.SetTarget(target);
+        return tag;
+    }
+
+    public static Form SetNoValidate(this Form tag)
+    {
+        tag.SetNoValidate();
+        return tag;
+    }
 }
