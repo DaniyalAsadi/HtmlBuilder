@@ -1,4 +1,4 @@
-using HtmlBuilder.Enums;
+﻿using HtmlBuilder.Enums;
 
 namespace HtmlBuilder.Tags.ScriptAndMetaTags;
 public class Base() : SingleTag("base")
@@ -15,6 +15,6 @@ public class Base() : SingleTag("base")
     internal void SetTarget(BaseTarget target)
     {
         this.Target = target;
-        this.AddAttribute("target", target.ToString().ToLower());
+        this.AddAttribute("target", target.ToHtmlString());
     }
 }

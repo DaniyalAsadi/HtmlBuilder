@@ -1,4 +1,4 @@
-using HtmlBuilder.Enums;
+﻿using HtmlBuilder.Enums;
 
 namespace HtmlBuilder.Tags.InteractiveTags;
 public class Button() : DoubleTagWithContent("button")
@@ -16,7 +16,7 @@ public class Button() : DoubleTagWithContent("button")
     internal void SetType(ButtonType type)
     {
         Type = type;
-        AddAttribute("type", type.ToString().ToLower());
+        AddAttribute("type", type.ToHtmlString());
     }
 
     internal void SetValue(string value)

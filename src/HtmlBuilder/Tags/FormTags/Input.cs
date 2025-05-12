@@ -1,4 +1,4 @@
-using HtmlBuilder.Enums;
+﻿using HtmlBuilder.Enums;
 
 namespace HtmlBuilder.Tags.FormTags;
 public class Input() : SingleTag("input")
@@ -8,7 +8,7 @@ public class Input() : SingleTag("input")
     internal void SetType(InputType type)
     {
         this.Type = type;
-        this.AddAttribute("type", type.ToString().ToLower());
+        this.AddAttribute("type", type.ToHtmlString());
     }
 
     internal void SetValue(string defaultValue)

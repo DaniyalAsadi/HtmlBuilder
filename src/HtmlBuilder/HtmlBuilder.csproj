@@ -14,12 +14,6 @@
 	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="Utility\Extensions\NewFolder\**" />
-    <EmbeddedResource Remove="Utility\Extensions\NewFolder\**" />
-    <None Remove="Utility\Extensions\NewFolder\**" />
-  </ItemGroup>
-
 
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.Razor" Version="6.0.36" />
@@ -33,7 +27,6 @@
     <Folder Include="Tags\ScriptAndMetaTags\" />
     <Folder Include="Tags\StylingTags\" />
     <Folder Include="Tags\TableTags\" />
-    <Folder Include="Utility\Extensions\" />
   </ItemGroup>
 
 </Project>

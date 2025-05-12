@@ -22,9 +22,9 @@ public static class FormExtensions
         return tag;
     }
 
-    public static Form SetEnctype(this Form tag, FormEnctype enctype)
+    public static Form SetEnctype(this Form tag, FormEncryptType encryptType)
     {
-        tag.SetEnctype(enctype);
+        tag.SetEnctype(encryptType);
         return tag;
     }
 

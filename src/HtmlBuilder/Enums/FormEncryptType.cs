@@ -3,7 +3,7 @@
 /// <summary>
 /// Specifies the encoding type to use when submitting the form.
 /// </summary>
-public enum FormEnctype
+public enum FormEncryptType
 {
     /// <summary>
     /// 'application/x-www-form-urlencoded' is the default encoding type, used to encode form data.

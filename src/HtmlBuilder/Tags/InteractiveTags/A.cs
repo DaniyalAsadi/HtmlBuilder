@@ -1,4 +1,4 @@
-using HtmlBuilder.Enums;
+﻿using HtmlBuilder.Enums;
 
 namespace HtmlBuilder.Tags.InteractiveTags;
 public class A() : DoubleTagWithContent("a")
@@ -29,6 +29,6 @@ public class A() : DoubleTagWithContent("a")
     internal void SetTarget(ATarget target)
     {
         this.Target = target;
-        this.AddAttribute("target", target.ToString().ToLower());
+        this.AddAttribute("target", target.ToHtmlString());
     }
 }

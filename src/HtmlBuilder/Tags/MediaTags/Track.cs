@@ -1,4 +1,4 @@
-using HtmlBuilder.Enums;
+﻿using HtmlBuilder.Enums;
 
 namespace HtmlBuilder.Tags.MediaTags;
 public class Track() : SingleTag("track")
@@ -18,7 +18,7 @@ public class Track() : SingleTag("track")
     internal void SetKind(TrackKind kind)
     {
         Kind = kind;
-        AddAttribute("kind", kind.ToString().ToLower());
+        AddAttribute("kind", kind.ToHtmlString());
     }
 
     internal void SetSrclang(string srclang)
