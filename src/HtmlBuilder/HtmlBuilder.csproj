@@ -16,11 +16,6 @@
 
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.CodeAnalysis.Razor" Version="6.0.36" />
-  </ItemGroup>
-
-
-  <ItemGroup>
     <Folder Include="Tags\FormTags\" />
     <Folder Include="Tags\InteractiveTags\" />
     <Folder Include="Tags\MediaTags\" />
