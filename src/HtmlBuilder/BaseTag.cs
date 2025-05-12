@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using System.Runtime.CompilerServices;
+using System.Text;
+[assembly: InternalsVisibleTo(assemblyName: "HtmlBuilder.Tests")]
 
 namespace HtmlBuilder;
 
@@ -18,12 +20,12 @@ public abstract class BaseTag(string name) : ITag
     /// <summary>
     /// Gets the collection of attributes for the HTML tag.
     /// </summary>
-    protected Dictionary<string, string?> Attributes { get; } = new();
+    protected internal Dictionary<string, string?> Attributes { get; } = new();
 
     /// <summary>
     /// Gets the collection of CSS classes for the HTML tag.
     /// </summary>
-    protected HashSet<string> Classes { get; } = new();
+    protected internal HashSet<string> Classes { get; } = new();
 
     /// <summary>
     /// Adds an attribute to the HTML tag.
@@ -48,7 +50,7 @@ public abstract class BaseTag(string name) : ITag
     /// Renders the attributes of the HTML tag as a string.
     /// </summary>
     /// <returns>A string containing the rendered attributes.</returns>
-    protected string RenderAttributes()
+    protected internal string RenderAttributes()
     {
         var sb = new StringBuilder();
         foreach (var attribute in Attributes)
