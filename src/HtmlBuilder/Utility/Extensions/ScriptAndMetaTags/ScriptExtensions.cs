@@ -1,13 +1,6 @@
-﻿namespace HtmlBuilder.Tags.ScriptAndMetaTags;
+namespace HtmlBuilder.Tags.ScriptAndMetaTags;
 public static class ScriptExtensions
 {
-    public static Script Script(this DoubleTagWithChildren doubleTag, Action<Script> action)
-    {
-        Script tag = new Script();
-        action(tag);
-        return tag;
-    }
-
     public static Script SetSrc(this Script tag, string src)
     {
         tag.SetSrc(src);
@@ -30,5 +23,13 @@ public static class ScriptExtensions
     {
         tag.SetDefer();
         return tag;
+    }
+
+    public static DoubleTagWithChildren Script(this DoubleTagWithChildren doubleTag, Action<Script> action)
+    {
+        Script tag = new Script();
+        action(tag);
+        doubleTag.AddChild(tag);
+        return doubleTag;
     }
 }

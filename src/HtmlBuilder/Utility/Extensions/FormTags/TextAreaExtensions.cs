@@ -1,13 +1,6 @@
 ﻿namespace HtmlBuilder.Tags.FormTags;
 public static class TextAreaExtensions
 {
-    public static Textarea Textarea(this DoubleTagWithChildren doubleTag, Action<Textarea> action)
-    {
-        Textarea tag = new Textarea();
-        action(tag);
-        return tag;
-    }
-
     public static Textarea SetName(this Textarea tag, string name)
     {
         tag.SetName(name);
@@ -42,5 +35,13 @@ public static class TextAreaExtensions
     {
         tag.SetDisabled();
         return tag;
+    }
+
+    public static DoubleTagWithChildren Textarea(this DoubleTagWithChildren doubleTag, Action<Textarea> action)
+    {
+        Textarea tag = new Textarea();
+        action(tag);
+        doubleTag.AddChild(tag);
+        return doubleTag;
     }
 }

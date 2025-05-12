@@ -1,15 +1,8 @@
-﻿using HtmlBuilder.Enums;
+using HtmlBuilder.Enums;
 
 namespace HtmlBuilder.Tags.FormTags;
 public static class InputExtensions
 {
-    public static Input Input(this DoubleTagWithChildren doubleTag, Action<Input> action)
-    {
-        Input tag = new Input();
-        action(tag);
-        return tag;
-    }
-
     public static Input SetType(this Input tag, InputType type)
     {
         tag.SetType(type);
@@ -26,5 +19,13 @@ public static class InputExtensions
     {
         tag.AddRegex(regex);
         return tag;
+    }
+
+    public static DoubleTagWithChildren Input(this DoubleTagWithChildren doubleTag, Action<Input> action)
+    {
+        Input tag = new Input();
+        action(tag);
+        doubleTag.AddChild(tag);
+        return doubleTag;
     }
 }

@@ -3,13 +3,6 @@ using System;
 namespace HtmlBuilder.Tags.MediaTags;
 public static class SourceExtensions
 {
-    public static Source Source(this DoubleTagWithChildren doubleTag, Action<Source> action)
-    {
-        Source tag = new Source();
-        action(tag);
-        return tag;
-    }
-
     public static Source SetSrc(this Source tag, string src)
     {
         tag.SetSrc(src);
@@ -20,5 +13,13 @@ public static class SourceExtensions
     {
         tag.SetType(type);
         return tag;
+    }
+
+    public static DoubleTagWithChildren Source(this DoubleTagWithChildren doubleTag, Action<Source> action)
+    {
+        Source tag = new Source();
+        action(tag);
+        doubleTag.AddChild(tag);
+        return doubleTag;
     }
 }

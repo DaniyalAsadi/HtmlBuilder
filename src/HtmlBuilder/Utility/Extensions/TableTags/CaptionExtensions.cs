@@ -3,10 +3,11 @@ using System;
 namespace HtmlBuilder.Tags.TableTags;
 public static class CaptionExtensions
 {
-    public static Caption Caption(this DoubleTagWithChildren doubleTag, Action<Caption> action)
+    public static DoubleTagWithChildren Caption(this DoubleTagWithChildren doubleTag, Action<Caption> action)
     {
         Caption tag = new Caption();
         action(tag);
-        return tag;
+        doubleTag.AddChild(tag);
+        return doubleTag;
     }
 }

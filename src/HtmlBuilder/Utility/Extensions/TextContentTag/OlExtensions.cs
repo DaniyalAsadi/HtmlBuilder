@@ -1,13 +1,6 @@
-﻿namespace HtmlBuilder.Tags.TextContentTag;
+namespace HtmlBuilder.Tags.TextContentTag;
 public static class OlExtensions
 {
-    public static Ol Ol(this DoubleTagWithChildren doubleTag, Action<Ol> action)
-    {
-        Ol tag = new Ol();
-        action(tag);
-        return tag;
-    }
-
     public static Ol SetType(this Ol tag, string type)
     {
         tag.SetType(type);
@@ -24,5 +17,13 @@ public static class OlExtensions
     {
         tag.SetReversed();
         return tag;
+    }
+
+    public static DoubleTagWithChildren Ol(this DoubleTagWithChildren doubleTag, Action<Ol> action)
+    {
+        Ol tag = new Ol();
+        action(tag);
+        doubleTag.AddChild(tag);
+        return doubleTag;
     }
 }

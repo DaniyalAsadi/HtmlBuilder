@@ -3,13 +3,6 @@ using System;
 namespace HtmlBuilder.Tags.StructuralTags;
 public static class HtmlExtensions
 {
-    public static Html Html(this DoubleTagWithChildren doubleTag, Action<Html> action)
-    {
-        Html tag = new Html();
-        action(tag);
-        return tag;
-    }
-
     public static Html SetLang(this Html tag, string lang)
     {
         tag.SetLang(lang);
@@ -20,5 +13,13 @@ public static class HtmlExtensions
     {
         tag.SetManifest(manifestUrl);
         return tag;
+    }
+
+    public static DoubleTagWithChildren Html(this DoubleTagWithChildren doubleTag, Action<Html> action)
+    {
+        Html tag = new Html();
+        action(tag);
+        doubleTag.AddChild(tag);
+        return doubleTag;
     }
 }

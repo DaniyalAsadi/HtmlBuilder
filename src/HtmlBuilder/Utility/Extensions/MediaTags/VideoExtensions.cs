@@ -1,13 +1,6 @@
-﻿namespace HtmlBuilder.Tags.MediaTags;
+namespace HtmlBuilder.Tags.MediaTags;
 public static class VideoExtensions
 {
-    public static Video Video(this DoubleTagWithChildren doubleTag, Action<Video> action)
-    {
-        Video tag = new Video();
-        action(tag);
-        return tag;
-    }
-
     public static Video SetSrc(this Video tag, string src)
     {
         tag.SetSrc(src);
@@ -48,5 +41,13 @@ public static class VideoExtensions
     {
         tag.SetHeight(height);
         return tag;
+    }
+
+    public static DoubleTagWithChildren Video(this DoubleTagWithChildren doubleTag, Action<Video> action)
+    {
+        Video tag = new Video();
+        action(tag);
+        doubleTag.AddChild(tag);
+        return doubleTag;
     }
 }

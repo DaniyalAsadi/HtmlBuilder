@@ -3,10 +3,11 @@ using System;
 namespace HtmlBuilder.Tags.TextContentTag;
 public static class H5Extensions
 {
-    public static H5 H5(this DoubleTagWithChildren doubleTag, Action<H5> action)
+    public static DoubleTagWithChildren H5(this DoubleTagWithChildren doubleTag, Action<H5> action)
     {
         H5 tag = new H5();
         action(tag);
-        return tag;
+        doubleTag.AddChild(tag);
+        return doubleTag;
     }
 }

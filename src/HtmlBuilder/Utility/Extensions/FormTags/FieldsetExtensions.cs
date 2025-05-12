@@ -1,13 +1,6 @@
-﻿namespace HtmlBuilder.Tags.FormTags;
+namespace HtmlBuilder.Tags.FormTags;
 public static class FieldsetExtensions
 {
-    public static Fieldset Fieldset(this DoubleTagWithChildren doubleTag, Action<Fieldset> action)
-    {
-        Fieldset tag = new Fieldset();
-        action(tag);
-        return tag;
-    }
-
     public static Fieldset SetName(this Fieldset tag, string name)
     {
         tag.SetName(name);
@@ -24,5 +17,13 @@ public static class FieldsetExtensions
     {
         tag.SetDisabled();
         return tag;
+    }
+
+    public static DoubleTagWithChildren Fieldset(this DoubleTagWithChildren doubleTag, Action<Fieldset> action)
+    {
+        Fieldset tag = new Fieldset();
+        action(tag);
+        doubleTag.AddChild(tag);
+        return doubleTag;
     }
 }

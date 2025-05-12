@@ -3,13 +3,6 @@ using System;
 namespace HtmlBuilder.Tags.ScriptAndMetaTags;
 public static class StyleExtensions
 {
-    public static Style Style(this DoubleTagWithChildren doubleTag, Action<Style> action)
-    {
-        Style tag = new Style();
-        action(tag);
-        return tag;
-    }
-
     public static Style SetType(this Style tag, string type)
     {
         tag.SetType(type);
@@ -20,5 +13,13 @@ public static class StyleExtensions
     {
         tag.SetMedia(media);
         return tag;
+    }
+
+    public static DoubleTagWithChildren Style(this DoubleTagWithChildren doubleTag, Action<Style> action)
+    {
+        Style tag = new Style();
+        action(tag);
+        doubleTag.AddChild(tag);
+        return doubleTag;
     }
 }

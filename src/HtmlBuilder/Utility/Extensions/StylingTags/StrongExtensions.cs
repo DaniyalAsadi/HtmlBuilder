@@ -3,10 +3,11 @@ using System;
 namespace HtmlBuilder.Tags.StylingTags;
 public static class StrongExtensions
 {
-    public static Strong Strong(this DoubleTagWithChildren doubleTag, Action<Strong> action)
+    public static DoubleTagWithChildren Strong(this DoubleTagWithChildren doubleTag, Action<Strong> action)
     {
         Strong tag = new Strong();
         action(tag);
-        return tag;
+        doubleTag.AddChild(tag);
+        return doubleTag;
     }
 }

@@ -3,10 +3,11 @@ using System;
 namespace HtmlBuilder.Tags.StructuralTags;
 public static class HeaderExtensions
 {
-    public static Header Header(this DoubleTagWithChildren doubleTag, Action<Header> action)
+    public static DoubleTagWithChildren Header(this DoubleTagWithChildren doubleTag, Action<Header> action)
     {
         Header tag = new Header();
         action(tag);
-        return tag;
+        doubleTag.AddChild(tag);
+        return doubleTag;
     }
 }

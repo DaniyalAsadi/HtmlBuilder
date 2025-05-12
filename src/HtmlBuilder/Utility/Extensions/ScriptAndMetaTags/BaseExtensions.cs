@@ -1,15 +1,8 @@
-﻿using HtmlBuilder.Enums;
+using HtmlBuilder.Enums;
 
 namespace HtmlBuilder.Tags.ScriptAndMetaTags;
 public static class BaseExtensions
 {
-    public static Base Base(this DoubleTagWithChildren doubleTag, Action<Base> action)
-    {
-        Base tag = new Base();
-        action(tag);
-        return tag;
-    }
-
     public static Base SetHref(this Base tag, string href)
     {
         tag.SetHref(href);
@@ -20,5 +13,13 @@ public static class BaseExtensions
     {
         tag.SetTarget(target);
         return tag;
+    }
+
+    public static DoubleTagWithChildren Base(this DoubleTagWithChildren doubleTag, Action<Base> action)
+    {
+        Base tag = new Base();
+        action(tag);
+        doubleTag.AddChild(tag);
+        return doubleTag;
     }
 }

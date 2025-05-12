@@ -1,15 +1,8 @@
-﻿using HtmlBuilder.Enums;
+using HtmlBuilder.Enums;
 
 namespace HtmlBuilder.Tags.FormTags;
 public static class FormExtensions
 {
-    public static Form Form(this DoubleTagWithChildren doubleTag, Action<Form> action)
-    {
-        Form tag = new Form();
-        action(tag);
-        return tag;
-    }
-
     public static Form SetAction(this Form tag, string action)
     {
         tag.SetAction(action);
@@ -38,5 +31,13 @@ public static class FormExtensions
     {
         tag.SetNoValidate();
         return tag;
+    }
+
+    public static DoubleTagWithChildren Form(this DoubleTagWithChildren doubleTag, Action<Form> action)
+    {
+        Form tag = new Form();
+        action(tag);
+        doubleTag.AddChild(tag);
+        return doubleTag;
     }
 }

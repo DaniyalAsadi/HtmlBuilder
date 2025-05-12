@@ -34,10 +34,10 @@ public abstract class DoubleTagWithContent : DoubleTag
     /// </summary>
     /// <param name="content">The new raw text content to set.</param>
     /// <returns>The updated content.</returns>
-    public string SetContent(string content)
+    public DoubleTagWithContent SetContent(string content)
     {
         _content = content;
-        return content;
+        return this;
 
     }
 

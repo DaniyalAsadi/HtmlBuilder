@@ -1,13 +1,6 @@
-﻿namespace HtmlBuilder.Tags.MediaTags;
+namespace HtmlBuilder.Tags.MediaTags;
 public static class AudioExtensions
 {
-    public static Audio Audio(this DoubleTagWithChildren doubleTag, Action<Audio> action)
-    {
-        Audio tag = new Audio();
-        action(tag);
-        return tag;
-    }
-
     public static Audio SetSrc(this Audio tag, string src)
     {
         tag.SetSrc(src);
@@ -36,5 +29,13 @@ public static class AudioExtensions
     {
         tag.SetMuted();
         return tag;
+    }
+
+    public static DoubleTagWithChildren Audio(this DoubleTagWithChildren doubleTag, Action<Audio> action)
+    {
+        Audio tag = new Audio();
+        action(tag);
+        doubleTag.AddChild(tag);
+        return doubleTag;
     }
 }

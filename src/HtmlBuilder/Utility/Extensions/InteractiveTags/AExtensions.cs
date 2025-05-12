@@ -1,15 +1,8 @@
-﻿using HtmlBuilder.Enums;
+using HtmlBuilder.Enums;
 
 namespace HtmlBuilder.Tags.InteractiveTags;
 public static class AExtensions
 {
-    public static A A(this DoubleTagWithChildren doubleTag, Action<A> action)
-    {
-        A tag = new A();
-        action(tag);
-        return tag;
-    }
-
     public static A SetHref(this A tag, string href)
     {
         tag.SetHref(href);
@@ -32,5 +25,13 @@ public static class AExtensions
     {
         tag.SetTarget(target);
         return tag;
+    }
+
+    public static DoubleTagWithChildren A(this DoubleTagWithChildren doubleTag, Action<A> action)
+    {
+        A tag = new A();
+        action(tag);
+        doubleTag.AddChild(tag);
+        return doubleTag;
     }
 }

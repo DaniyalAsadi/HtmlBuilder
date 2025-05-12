@@ -3,13 +3,6 @@ using System;
 namespace HtmlBuilder.Tags.TableTags;
 public static class ThExtensions
 {
-    public static Th Th(this DoubleTagWithChildren doubleTag, Action<Th> action)
-    {
-        Th tag = new Th();
-        action(tag);
-        return tag;
-    }
-
     public static Th SetColspan(this Th tag, int colspan)
     {
         tag.SetColspan(colspan);
@@ -32,5 +25,13 @@ public static class ThExtensions
     {
         tag.SetScope(scope);
         return tag;
+    }
+
+    public static DoubleTagWithChildren Th(this DoubleTagWithChildren doubleTag, Action<Th> action)
+    {
+        Th tag = new Th();
+        action(tag);
+        doubleTag.AddChild(tag);
+        return doubleTag;
     }
 }

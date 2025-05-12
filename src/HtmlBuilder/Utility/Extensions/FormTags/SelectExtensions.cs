@@ -1,13 +1,6 @@
-﻿namespace HtmlBuilder.Tags.FormTags;
+namespace HtmlBuilder.Tags.FormTags;
 public static class SelectExtensions
 {
-    public static Select Select(this DoubleTagWithChildren doubleTag, Action<Select> action)
-    {
-        Select tag = new Select();
-        action(tag);
-        return tag;
-    }
-
     public static Select SetName(this Select tag, string name)
     {
         tag.SetName(name);
@@ -36,5 +29,13 @@ public static class SelectExtensions
     {
         tag.SetSelected(value);
         return tag;
+    }
+
+    public static DoubleTagWithChildren Select(this DoubleTagWithChildren doubleTag, Action<Select> action)
+    {
+        Select tag = new Select();
+        action(tag);
+        doubleTag.AddChild(tag);
+        return doubleTag;
     }
 }

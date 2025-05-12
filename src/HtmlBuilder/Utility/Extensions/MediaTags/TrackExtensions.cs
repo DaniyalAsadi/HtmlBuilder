@@ -1,15 +1,8 @@
-﻿using HtmlBuilder.Enums;
+using HtmlBuilder.Enums;
 
 namespace HtmlBuilder.Tags.MediaTags;
 public static class TrackExtensions
 {
-    public static Track Track(this DoubleTagWithChildren doubleTag, Action<Track> action)
-    {
-        Track tag = new Track();
-        action(tag);
-        return tag;
-    }
-
     public static Track SetSrc(this Track tag, string src)
     {
         tag.SetSrc(src);
@@ -38,5 +31,13 @@ public static class TrackExtensions
     {
         tag.SetDefault();
         return tag;
+    }
+
+    public static DoubleTagWithChildren Track(this DoubleTagWithChildren doubleTag, Action<Track> action)
+    {
+        Track tag = new Track();
+        action(tag);
+        doubleTag.AddChild(tag);
+        return doubleTag;
     }
 }

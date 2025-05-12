@@ -1,15 +1,8 @@
-﻿using HtmlBuilder.Enums;
+using HtmlBuilder.Enums;
 
 namespace HtmlBuilder.Tags.InteractiveTags;
 public static class ButtonExtensions
 {
-    public static Button Button(this DoubleTagWithChildren doubleTag, Action<Button> action)
-    {
-        Button tag = new Button();
-        action(tag);
-        return tag;
-    }
-
     public static Button SetDisabled(this Button tag)
     {
         tag.SetDisabled();
@@ -26,5 +19,13 @@ public static class ButtonExtensions
     {
         tag.SetValue(value);
         return tag;
+    }
+
+    public static DoubleTagWithChildren Button(this DoubleTagWithChildren doubleTag, Action<Button> action)
+    {
+        Button tag = new Button();
+        action(tag);
+        doubleTag.AddChild(tag);
+        return doubleTag;
     }
 }

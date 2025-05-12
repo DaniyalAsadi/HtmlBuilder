@@ -3,13 +3,6 @@ using System;
 namespace HtmlBuilder.Tags.ScriptAndMetaTags;
 public static class LinkExtensions
 {
-    public static Link Link(this DoubleTagWithChildren doubleTag, Action<Link> action)
-    {
-        Link tag = new Link();
-        action(tag);
-        return tag;
-    }
-
     public static Link SetRel(this Link tag, string rel)
     {
         tag.SetRel(rel);
@@ -26,5 +19,13 @@ public static class LinkExtensions
     {
         tag.SetHref(href);
         return tag;
+    }
+
+    public static DoubleTagWithChildren Link(this DoubleTagWithChildren doubleTag, Action<Link> action)
+    {
+        Link tag = new Link();
+        action(tag);
+        doubleTag.AddChild(tag);
+        return doubleTag;
     }
 }

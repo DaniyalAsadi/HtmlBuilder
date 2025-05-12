@@ -1,13 +1,6 @@
-﻿namespace HtmlBuilder.Tags.FormTags;
+namespace HtmlBuilder.Tags.FormTags;
 public static class OptionExtensions
 {
-    public static Option Option(this DoubleTagWithChildren doubleTag, Action<Option> action)
-    {
-        Option tag = new Option();
-        action(tag);
-        return tag;
-    }
-
     public static Option SetValue(this Option tag, string value)
     {
         tag.SetValue(value);
@@ -30,5 +23,13 @@ public static class OptionExtensions
     {
         tag.GetAttribute(key);
         return tag;
+    }
+
+    public static DoubleTagWithChildren Option(this DoubleTagWithChildren doubleTag, Action<Option> action)
+    {
+        Option tag = new Option();
+        action(tag);
+        doubleTag.AddChild(tag);
+        return doubleTag;
     }
 }
