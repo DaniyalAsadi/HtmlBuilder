@@ -1,3 +1,2 @@
-﻿namespace HtmlBuilder.Tags.FormTags;
-
+namespace HtmlBuilder.Tags.FormTags;
 public class Legend() : DoubleTagWithContent("legend");

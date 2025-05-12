@@ -1,5 +1,4 @@
-﻿namespace HtmlBuilder.Tags.MediaTags;
-
+namespace HtmlBuilder.Tags.MediaTags;
 public class Audio() : DoubleTagWithChildren("audio")
 {
     public string Src { get; private set; } = string.Empty;
@@ -8,38 +7,33 @@ public class Audio() : DoubleTagWithChildren("audio")
     public bool Loop { get; private set; } = false;
     public bool Muted { get; private set; } = false;
 
-    public Audio SetSrc(string src)
+    internal void SetSrc(string src)
     {
         this.Src = src;
         this.AddAttribute("src", src);
-        return this;
     }
 
-    public Audio SetControls()
+    internal void SetControls()
     {
         this.Controls = true;
         this.AddAttribute("controls");
-        return this;
     }
 
-    public Audio SetAutoplay()
+    internal void SetAutoplay()
     {
         this.Autoplay = true;
         this.AddAttribute("autoplay");
-        return this;
     }
 
-    public Audio SetLoop()
+    internal void SetLoop()
     {
         this.Loop = true;
         this.AddAttribute("loop");
-        return this;
     }
 
-    public Audio SetMuted()
+    internal void SetMuted()
     {
         this.Muted = true;
         this.AddAttribute("muted");
-        return this;
     }
 }

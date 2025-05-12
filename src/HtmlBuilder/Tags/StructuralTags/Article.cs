@@ -1,2 +1,2 @@
-﻿namespace HtmlBuilder.Tags.StructuralTags;
+namespace HtmlBuilder.Tags.StructuralTags;
 public class Article() : DoubleTagWithChildren("article");

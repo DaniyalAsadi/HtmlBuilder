@@ -1,5 +1,4 @@
-﻿namespace HtmlBuilder.Tags.MediaTags;
-
+namespace HtmlBuilder.Tags.MediaTags;
 public class Iframe() : SingleTag("iframe")
 {
     public string Src { get; private set; } = string.Empty;
@@ -8,39 +7,33 @@ public class Iframe() : SingleTag("iframe")
     public string Frameborder { get; private set; }
     public bool AllowFullscreen { get; private set; } = false;
 
-    public Iframe SetSrc(string src)
+    internal void SetSrc(string src)
     {
         Src = src;
         AddAttribute("src", src);
-        return this;
     }
 
-    public Iframe SetWidth(string width)
+    internal void SetWidth(string width)
     {
         Width = width;
         AddAttribute("width", width);
-        return this;
     }
 
-    public Iframe SetHeight(string height)
+    internal void SetHeight(string height)
     {
         Height = height;
         AddAttribute("height", height);
-        return this;
     }
 
-    public Iframe SetFrameborder(string frameborder)
+    internal void SetFrameborder(string frameborder)
     {
         Frameborder = frameborder;
         AddAttribute("frameborder", frameborder);
-        return this;
     }
 
-    public Iframe SetAllowFullscreen()
+    internal void SetAllowFullscreen()
     {
         AllowFullscreen = true;
         AddAttribute("allowfullscreen");
-        return this;
     }
 }
-

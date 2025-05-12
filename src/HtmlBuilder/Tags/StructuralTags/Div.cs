@@ -1,5 +1,4 @@
-﻿namespace HtmlBuilder.Tags.StructuralTags;
-
+namespace HtmlBuilder.Tags.StructuralTags;
 public class Div() : DoubleTagWithChildren("div")
 {
 }

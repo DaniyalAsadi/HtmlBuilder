@@ -1,3 +1,2 @@
-﻿namespace HtmlBuilder.Tags.InteractiveTags;
-
+namespace HtmlBuilder.Tags.InteractiveTags;
 public class Summary() : DoubleTagWithContent("summary");

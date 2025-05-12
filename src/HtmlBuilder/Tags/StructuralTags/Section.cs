@@ -1,3 +1,2 @@
-﻿namespace HtmlBuilder.Tags.StructuralTags;
-
+namespace HtmlBuilder.Tags.StructuralTags;
 public class Section() : DoubleTagWithChildren("section");

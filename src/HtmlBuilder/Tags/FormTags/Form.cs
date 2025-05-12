@@ -1,4 +1,4 @@
-﻿using HtmlBuilder.Enums;
+using HtmlBuilder.Enums;
 
 namespace HtmlBuilder.Tags.FormTags;
 public class Form() : DoubleTagWithChildren("form")
@@ -9,39 +9,33 @@ public class Form() : DoubleTagWithChildren("form")
     public FormTarget Target { get; private set; } = FormTarget._Self;
     public bool NoValidate { get; private set; } = false;
 
-    public Form SetAction(string action)
+    internal void SetAction(string action)
     {
         this.Action = action;
         this.AddAttribute("action", action);
-        return this;
     }
 
-    public Form SetMethod(FormMethod method)
+    internal void SetMethod(FormMethod method)
     {
         this.Method = method;
         this.AddAttribute("method", method.ToString().ToLower());
-        return this;
     }
 
-    public Form SetEnctype(FormEnctype enctype)
+    internal void SetEnctype(FormEnctype enctype)
     {
         this.Enctype = enctype;
         this.AddAttribute("enctype", enctype.ToString().ToLower());
-        return this;
     }
 
-    public Form SetTarget(FormTarget target)
+    internal void SetTarget(FormTarget target)
     {
         this.Target = target;
         this.AddAttribute("target", target.ToString().ToLower());
-        return this;
     }
 
-    public Form SetNoValidate()
+    internal void SetNoValidate()
     {
         this.NoValidate = true;
         this.AddAttribute("novalidate");
-        return this;
     }
-
 }

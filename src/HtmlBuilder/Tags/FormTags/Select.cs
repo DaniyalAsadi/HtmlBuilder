@@ -1,4 +1,4 @@
-﻿namespace HtmlBuilder.Tags.FormTags;
+namespace HtmlBuilder.Tags.FormTags;
 public class Select() : DoubleTagWithChildren("select")
 {
     public string SelectName { get; private set; } = string.Empty;
@@ -6,32 +6,28 @@ public class Select() : DoubleTagWithChildren("select")
     public bool IsDisabled { get; private set; } = false;
     public bool IsMultiple { get; private set; } = false;
 
-    public Select SetName(string name)
+    internal void SetName(string name)
     {
         this.SelectName = name;
         this.AddAttribute("name", name);
-        return this;
     }
 
-    public Select SetRequired()
+    internal void SetRequired()
     {
         this.IsRequired = true;
         this.AddAttribute("required");
-        return this;
     }
 
-    public Select SetDisabled()
+    internal void SetDisabled()
     {
         this.IsDisabled = true;
         this.AddAttribute("disabled");
-        return this;
     }
 
-    public Select SetMultiple()
+    internal void SetMultiple()
     {
         this.IsMultiple = true;
         this.AddAttribute("multiple");
-        return this;
     }
 
     public void SetSelected(string value)

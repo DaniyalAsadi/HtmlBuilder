@@ -1,2 +1,2 @@
-﻿namespace HtmlBuilder.Tags.TableTags;
+namespace HtmlBuilder.Tags.TableTags;
 public class Thead() : DoubleTagWithChildren("thead");

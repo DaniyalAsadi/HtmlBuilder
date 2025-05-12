@@ -1,4 +1,3 @@
-﻿
 using HtmlBuilder.Enums;
 
 namespace HtmlBuilder.Tags.FormTags;
@@ -6,23 +5,19 @@ public class Input() : SingleTag("input")
 {
     public InputType Type { get; set; }
 
-
-    public Input SetType(InputType type)
+    internal void SetType(InputType type)
     {
         this.Type = type;
         this.AddAttribute("type", type.ToString().ToLower());
-        return this;
     }
 
-    public Input SetValue(string defaultValue)
+    internal void SetValue(string defaultValue)
     {
         this.AddAttribute("value", defaultValue);
-        return this;
     }
 
-    public Input AddRegex(string regex)
+    internal void AddRegex(string regex)
     {
         this.AddAttribute("pattern", regex);
-        return this;
     }
 }

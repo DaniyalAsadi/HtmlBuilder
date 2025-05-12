@@ -1,3 +1,2 @@
-﻿namespace HtmlBuilder.Tags.ScriptAndMetaTags;
-
+namespace HtmlBuilder.Tags.ScriptAndMetaTags;
 public class Noscript() : DoubleTagWithChildren("noscript");

@@ -1,3 +1,2 @@
-﻿namespace HtmlBuilder.Tags.TableTags;
-
+namespace HtmlBuilder.Tags.TableTags;
 public class Caption() : DoubleTagWithContent("caption");

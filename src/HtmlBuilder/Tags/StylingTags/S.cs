@@ -1,3 +1,2 @@
-﻿namespace HtmlBuilder.Tags.StylingTags;
-
+namespace HtmlBuilder.Tags.StylingTags;
 public class S() : DoubleTagWithContent("s");

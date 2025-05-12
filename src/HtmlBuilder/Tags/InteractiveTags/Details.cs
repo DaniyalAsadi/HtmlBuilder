@@ -1,13 +1,11 @@
-﻿namespace HtmlBuilder.Tags.InteractiveTags;
-
+namespace HtmlBuilder.Tags.InteractiveTags;
 public class Details() : DoubleTagWithChildren("details")
 {
     public bool IsOpen { get; private set; } = false;
 
-    public Details SetOpen()
+    internal void SetOpen()
     {
         IsOpen = true;
         AddAttribute("open");
-        return this;
     }
 }
