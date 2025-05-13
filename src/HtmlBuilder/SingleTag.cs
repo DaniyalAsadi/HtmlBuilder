@@ -1,6 +1,4 @@
-﻿using System.Text;
-
-namespace HtmlBuilder;
+﻿namespace HtmlBuilder;
 /// <summary>
 /// Represents a single HTML tag that does not have a closing tag (e.g., <img />, <br />).
 /// </summary>
@@ -25,20 +23,6 @@ public abstract class SingleTag : BaseTag
         action?.Invoke(this);
     }
 
-    /// <summary>
-    /// Renders the HTML representation of the single tag with the specified indentation level.
-    /// </summary>
-    /// <param name="level">The indentation level for the rendered tag.</param>
-    /// <returns>A string containing the rendered HTML tag.</returns>
-    public override string Render(int level)
-    {
-        var indent = new string(' ', level * 4);
-        var sb = new StringBuilder();
-        sb.Append($"{indent}<{Name}");
-        sb.Append(RenderAttributes());
-        sb.AppendLine("/>");
-        return sb.ToString();
-    }
 
     /// <summary>
     /// Returns the string representation of the single tag.
@@ -46,6 +30,6 @@ public abstract class SingleTag : BaseTag
     /// <returns>A string containing the rendered HTML tag with no indentation.</returns>
     public override string ToString()
     {
-        return Render(0);
+        return Name;
     }
 }

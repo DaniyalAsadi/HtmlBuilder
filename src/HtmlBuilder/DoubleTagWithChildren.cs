@@ -1,6 +1,4 @@
-using System.Text;
-
-namespace HtmlBuilder;
+﻿namespace HtmlBuilder;
 
 /// <summary>
 /// Represents an HTML tag that can have child tags and attributes.
@@ -10,7 +8,7 @@ public abstract class DoubleTagWithChildren : DoubleTag
     /// <summary>
     /// The list of child tags contained within this tag.
     /// </summary>
-    private readonly List<ITag> _children = new();
+    private readonly List<BaseTag> _children = new();
 
     /// <summary>
     /// Represents an HTML tag that can have child tags and attributes.
@@ -28,7 +26,7 @@ public abstract class DoubleTagWithChildren : DoubleTag
     /// <summary>
     /// Gets a read-only collection of child tags.
     /// </summary>
-    protected IEnumerable<ITag> Children => _children.AsReadOnly();
+    public IEnumerable<BaseTag> Children => _children.AsReadOnly();
 
     /// <summary>
     /// Adds a new child tag of the specified type to this tag.
@@ -37,7 +35,7 @@ public abstract class DoubleTagWithChildren : DoubleTag
     /// <param name="creator">An optional action to configure the child tag.</param>
     /// <returns>The current <see cref="DoubleTagWithChildren"/> instance.</returns>
     public DoubleTagWithChildren AddChild<TTag>(Action<TTag>? creator = null)
-        where TTag : ITag, new()
+        where TTag : BaseTag, new()
     {
         var x = new TTag();
         creator?.Invoke(x);
@@ -50,33 +48,13 @@ public abstract class DoubleTagWithChildren : DoubleTag
     /// </summary>
     /// <param name="tag">The child tag to add.</param>
     /// <returns>The current <see cref="DoubleTagWithChildren"/> instance.</returns>
-    public DoubleTagWithChildren AddChild(ITag tag)
+    public DoubleTagWithChildren AddChild(BaseTag tag)
     {
         _children.Add(tag);
         return this;
     }
 
 
-    /// <summary>
-    /// Renders the HTML representation of this tag and its children.
-    /// </summary>
-    /// <param name="level">The indentation level for rendering.</param>
-    /// <returns>A string containing the rendered HTML.</returns>
-    public override string Render(int level)
-    {
-        var indent = new string(' ', level * 4);
-        var sb = new StringBuilder();
-        sb.Append($"{indent}<{Name}");
-        sb.Append(this.RenderAttributes());
-        sb.AppendLine(">");
-
-        foreach (var child in Children)
-        {
-            sb.Append(child.Render(level + 1));
-        }
-        sb.AppendLine($"{indent}</{Name}>");
-        return sb.ToString();
-    }
 
     /// <summary>
     /// Returns the string representation of this tag, including its children.
@@ -84,6 +62,6 @@ public abstract class DoubleTagWithChildren : DoubleTag
     /// <returns>A string containing the rendered HTML.</returns>
     public override string ToString()
     {
-        return Render(0);
+        return Name;
     }
 }

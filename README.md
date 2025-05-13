@@ -6,11 +6,11 @@ A lightweight and extensible HTML element builder for .NET developers. Designed 
 
 ## ✨ Features
 
-- Dynamic creation of HTML elements via fluent C# API  
-- Full support for nesting, attributes, and inner content  
-- Ideal for building reusable HTML components  
-- Easily extendable with custom rendering logic  
-- Built with SOLID principles and DDD mindset  
+- Dynamic creation of HTML elements via fluent C# API
+- Full support for nesting, attributes, and inner content
+- Ideal for building reusable HTML components
+- Easily extendable with custom rendering logic
+- Built with SOLID principles and DDD mindset
 
 ---
 
@@ -21,6 +21,7 @@ Install the NuGet package:
 ```bash
 dotnet add package HtmlBuilder
 ```
+
 Or via the NuGet Package Manager:
 
 ```powershell
@@ -28,6 +29,7 @@ Install-Package HtmlBuilder
 ```
 
 ## 🚀 Quick Start
+
 ```csharp
 var div = HtmlBuilder.Div(div =>
         {
@@ -45,23 +47,25 @@ var div = HtmlBuilder.Div(div =>
                     .AddClass("col-md-3");
             }));
         });
-string html = div.ToString();
+string html = div.ToPrettyHtml();
 Console.WriteLine(html);
 ```
+
 ### Output:
 
 ```html
 <div>
-    <div>
-        <h1 id="id"> Hello - World </h1>
-    </div>
-    <div>
-        <h2 id="id"> GoodBye - World </h2>
-    </div>
+  <div>
+    <h1 id="id">Hello - World</h1>
+  </div>
+  <div>
+    <h2 id="id">GoodBye - World</h2>
+  </div>
 </div>
 ```
 
 ## 📁 Project Structure
+
 ```bash
 HtmlBuilder/
 ├── src/HtmlBuilder/           # Core library
@@ -69,18 +73,24 @@ HtmlBuilder/
 ├── HtmlBuilder.sln            # Solution file
 └── README.md                  # This file
 ```
+
 ## 🧪 Running Tests
+
 ```bash
 dotnet test
 ```
+
 ## 📚 Documentation
+
 Coming soon — advanced usage and extension patterns will be documented in the Wiki.
 
 ## 🤝 Contributing
+
 Contributions are welcome! Feel free to submit issues or pull requests.
 For major changes, please open an issue first to discuss what you would like to change.
 
 ## 📄 License
+
 MIT License
 
 Copyright (c) 2025 DaniyalAsadi

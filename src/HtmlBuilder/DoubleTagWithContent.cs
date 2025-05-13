@@ -1,6 +1,4 @@
-﻿using System.Text;
-
-namespace HtmlBuilder;
+﻿namespace HtmlBuilder;
 
 
 /// <summary>
@@ -41,22 +39,6 @@ public abstract class DoubleTagWithContent : DoubleTag
 
     }
 
-    /// <summary>
-    /// Renders the HTML representation of the tag, including its raw text content and attributes.
-    /// </summary>
-    /// <param name="level">The indentation level for the rendered HTML.</param>
-    /// <returns>A string containing the rendered HTML.</returns>
-    public override string Render(int level)
-    {
-        var indent = new string(' ', level * 4);
-        var sb = new StringBuilder();
-        sb.Append($"{indent}<{Name}");
-        sb.Append(RenderAttributes());
-        sb.Append("> ");
-        if (!string.IsNullOrEmpty(Content)) sb.Append($"{Content} ");
-        sb.AppendLine($"</{Name}>");
-        return sb.ToString();
-    }
 
     /// <summary>
     /// Returns the string representation of this tag, including its raw text content.
@@ -64,6 +46,6 @@ public abstract class DoubleTagWithContent : DoubleTag
     /// <returns>A string containing the rendered HTML.</returns>
     public override string ToString()
     {
-        return Render(0);
+        return Name;
     }
 }

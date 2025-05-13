@@ -40,12 +40,6 @@ public abstract class BaseTag(string name) : ITag
         return this;
     }
 
-    /// <summary>
-    /// Renders the HTML tag as a string.
-    /// </summary>
-    /// <param name="level">The indentation level for rendering.</param>
-    /// <returns>The rendered HTML string.</returns>
-    public abstract string Render(int level);
 
     public abstract void Accept(IHtmlVisitor visitor);
 

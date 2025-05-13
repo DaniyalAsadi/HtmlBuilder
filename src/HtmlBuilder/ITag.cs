@@ -18,10 +18,4 @@ public interface ITag
     /// <returns>The current instance of <see cref="ITag"/> for method chaining.</returns>
     ITag AddAttribute(string key, string value);
 
-    /// <summary>
-    /// Renders the HTML tag as a string.
-    /// </summary>
-    /// <param name="level">The indentation level for the rendered tag.</param>
-    /// <returns>A string representation of the HTML tag.</returns>
-    string Render(int level);
 }
