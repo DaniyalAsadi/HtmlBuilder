@@ -1,14 +1,18 @@
 ﻿using System.Text;
 
 namespace HtmlBuilder.Visitors;
-internal sealed class PrettyHtmlVisitor : IHtmlVisitor
+internal sealed class PrettyHtmlRenderer : IHtmlVisitor, IHtmlRenderer
 {
     private readonly StringBuilder _sb = new();
     private int _indentLevel = 0;
     private const int IndentSize = 4;
 
-    public string GetResult() => _sb.ToString();
-
+    public string Render(BaseTag tag)
+    {
+        _sb.Clear();
+        tag.Accept(this);
+        return _sb.ToString();
+    }
     public void Visit(DoubleTagWithChildren tag)
     {
         WriteOpeningTag(tag.Name, tag.RenderAttributes());

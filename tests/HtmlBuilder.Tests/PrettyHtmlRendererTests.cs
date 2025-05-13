@@ -3,7 +3,7 @@ using HtmlBuilder.Tags.TextContentTag;
 using HtmlBuilder.Utility.Extensions.Visitors;
 
 namespace HtmlBuilder.Tests;
-public class PrettyHtmlVisitorTests
+public class PrettyHtmlRendererTests
 {
     [Fact]
     public void Fact()

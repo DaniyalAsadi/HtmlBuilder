@@ -8,17 +8,16 @@ public static class HtmlVisitorExtensions
     /// </summary>
     public static string ToPrettyHtml(this BaseTag tag)
     {
-        var visitor = new PrettyHtmlVisitor();
-        tag.Accept(visitor);
-        return visitor.GetResult();
+        IHtmlRenderer renderer = new PrettyHtmlRenderer();
+
+        return renderer.Render(tag);
     }
     /// <summary>
     /// To render the HTML tag in minimal Format
     /// </summary>
     public static string ToMinimalHtml(this BaseTag tag)
     {
-        var visitor = new MinimalHtmlVisitor();
-        tag.Accept(visitor);
-        return visitor.GetResult();
+        IHtmlRenderer renderer = new MinimalHtmlRenderer();
+        return renderer.Render(tag);
     }
 }

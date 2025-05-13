@@ -2,12 +2,16 @@
 
 namespace HtmlBuilder.Visitors;
 
-internal sealed class MinimalHtmlVisitor : IHtmlVisitor
+public sealed class MinimalHtmlRenderer : IHtmlVisitor, IHtmlRenderer
 {
     private readonly StringBuilder _sb = new();
 
-    public string GetResult() => _sb.ToString();
-
+    public string Render(BaseTag tag)
+    {
+        _sb.Clear();
+        tag.Accept(this);
+        return _sb.ToString();
+    }
     public void Visit(DoubleTagWithChildren tag)
     {
         _sb.Append('<').Append(tag.Name).Append(tag.RenderAttributes()).Append('>');
