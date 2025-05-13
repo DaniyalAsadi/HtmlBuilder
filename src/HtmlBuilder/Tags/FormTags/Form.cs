@@ -1,4 +1,4 @@
-﻿using HtmlBuilder.Enums;
+using HtmlBuilder.Enums;
 
 namespace HtmlBuilder.Tags.FormTags;
 public class Form() : DoubleTagWithChildren("form")
@@ -37,5 +37,10 @@ public class Form() : DoubleTagWithChildren("form")
     {
         this.NoValidate = true;
         this.AddAttribute("novalidate");
+    }
+
+    public override void Accept(IHtmlVisitor visitor)
+    {
+        visitor.Visit(this);
     }
 }

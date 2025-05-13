@@ -43,4 +43,9 @@ public class Textarea() : DoubleTagWithContent("textarea")
         this.IsDisabled = true;
         this.AddAttribute("disabled");
     }
+
+    public override void Accept(IHtmlVisitor visitor)
+    {
+        visitor.Visit(this);
+    }
 }

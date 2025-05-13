@@ -8,4 +8,9 @@ public class Colgroup() : DoubleTagWithChildren("colgroup")
         this.Span = span;
         this.AddAttribute("span", span.ToString());
     }
+
+    public override void Accept(IHtmlVisitor visitor)
+    {
+        visitor.Visit(this);
+    }
 }

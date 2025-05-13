@@ -8,4 +8,9 @@ public class Col() : SingleTag("col")
         this.Span = span;
         this.AddAttribute("span", span.ToString());
     }
+
+    public override void Accept(IHtmlVisitor visitor)
+    {
+        visitor.Visit(this);
+    }
 }

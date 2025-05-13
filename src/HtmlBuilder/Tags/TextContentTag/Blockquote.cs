@@ -8,4 +8,9 @@ public class Blockquote() : DoubleTagWithContent("blockquote")
         this.Cite = cite;
         this.AddAttribute("cite", cite);
     }
+
+    public override void Accept(IHtmlVisitor visitor)
+    {
+        visitor.Visit(this);
+    }
 }

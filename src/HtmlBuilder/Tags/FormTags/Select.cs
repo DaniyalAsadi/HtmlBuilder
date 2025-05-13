@@ -1,4 +1,4 @@
-﻿namespace HtmlBuilder.Tags.FormTags;
+namespace HtmlBuilder.Tags.FormTags;
 public class Select() : DoubleTagWithChildren("select")
 {
     public string SelectName { get; private set; } = string.Empty;
@@ -39,5 +39,10 @@ public class Select() : DoubleTagWithChildren("select")
                 child.SetSelected();
             }
         }
+    }
+
+    public override void Accept(IHtmlVisitor visitor)
+    {
+        visitor.Visit(this);
     }
 }

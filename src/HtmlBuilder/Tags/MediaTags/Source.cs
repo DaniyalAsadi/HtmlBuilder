@@ -15,4 +15,9 @@ public class Source() : SingleTag("source")
         this.Type = type;
         this.AddAttribute("type", type);
     }
+
+    public override void Accept(IHtmlVisitor visitor)
+    {
+        visitor.Visit(this);
+    }
 }

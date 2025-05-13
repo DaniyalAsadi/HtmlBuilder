@@ -22,4 +22,9 @@ public class Td() : DoubleTagWithChildren("td")
         this.Headers = headers;
         this.AddAttribute("headers", headers);
     }
+
+    public override void Accept(IHtmlVisitor visitor)
+    {
+        visitor.Visit(this);
+    }
 }

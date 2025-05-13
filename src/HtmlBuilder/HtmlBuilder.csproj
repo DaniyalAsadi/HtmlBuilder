@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	  <!-- Metadata for NuGet Package -->
-	  <PackageId>HtmlBuilder</PackageId>
+	  <PackageId>FluentHtmlBuilder</PackageId>
 	  <Version>1.0.0</Version>
 	  <Authors>Daniyal Asadi</Authors>
 	  <Description>A library for building HTML tags programmatically in .NET.</Description>

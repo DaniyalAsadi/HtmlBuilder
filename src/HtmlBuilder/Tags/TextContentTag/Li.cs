@@ -8,4 +8,9 @@ public class Li() : DoubleTagWithContent("li")
         this.Value = value;
         this.AddAttribute("value", value);
     }
+
+    public override void Accept(IHtmlVisitor visitor)
+    {
+        visitor.Visit(this);
+    }
 }

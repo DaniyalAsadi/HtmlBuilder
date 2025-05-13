@@ -1,4 +1,4 @@
-﻿namespace HtmlBuilder.Tags.FormTags;
+namespace HtmlBuilder.Tags.FormTags;
 public class Option() : DoubleTagWithContent("option")
 {
     public string Value { get; private set; } = string.Empty;
@@ -26,5 +26,10 @@ public class Option() : DoubleTagWithContent("option")
     internal string? GetAttribute(string key)
     {
         return this.Attributes.GetValueOrDefault(key);
+    }
+
+    public override void Accept(IHtmlVisitor visitor)
+    {
+        visitor.Visit(this);
     }
 }

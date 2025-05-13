@@ -36,4 +36,9 @@ public class Audio() : DoubleTagWithChildren("audio")
         this.Muted = true;
         this.AddAttribute("muted");
     }
+
+    public override void Accept(IHtmlVisitor visitor)
+    {
+        visitor.Visit(this);
+    }
 }

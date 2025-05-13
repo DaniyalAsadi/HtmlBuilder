@@ -5,6 +5,10 @@
         private class TestTag(string name) : BaseTag(name)
         {
             public override string Render(int level) => $"<{Name}{RenderAttributes()} />";
+            public override void Accept(IHtmlVisitor visitor)
+            {
+                throw new NotImplementedException();
+            }
         }
 
         [Fact]

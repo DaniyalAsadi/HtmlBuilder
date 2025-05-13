@@ -50,4 +50,9 @@ public class Video() : DoubleTagWithChildren("video")
         this.Height = height;
         this.AddAttribute("height", height);
     }
+
+    public override void Accept(IHtmlVisitor visitor)
+    {
+        visitor.Visit(this);
+    }
 }

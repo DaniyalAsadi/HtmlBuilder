@@ -36,4 +36,9 @@ public class Iframe() : SingleTag("iframe")
         AllowFullscreen = true;
         AddAttribute("allowfullscreen");
     }
+
+    public override void Accept(IHtmlVisitor visitor)
+    {
+        visitor.Visit(this);
+    }
 }

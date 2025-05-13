@@ -29,4 +29,9 @@ public class Meta() : SingleTag("meta")
         this.Charset = charset;
         this.AddAttribute("charset", charset);
     }
+
+    public override void Accept(IHtmlVisitor visitor)
+    {
+        visitor.Visit(this);
+    }
 }

@@ -22,4 +22,9 @@ public class Link() : SingleTag("link")
         this.Href = href;
         this.AddAttribute("href", href);
     }
+
+    public override void Accept(IHtmlVisitor visitor)
+    {
+        visitor.Visit(this);
+    }
 }

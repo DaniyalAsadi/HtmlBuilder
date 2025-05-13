@@ -8,4 +8,9 @@ public class Label() : DoubleTagWithContent("label")
         this.For = @for;
         this.AddAttribute("For", @for);
     }
+
+    public override void Accept(IHtmlVisitor visitor)
+    {
+        visitor.Visit(this);
+    }
 }

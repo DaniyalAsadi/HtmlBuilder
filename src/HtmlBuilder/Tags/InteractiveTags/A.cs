@@ -1,4 +1,4 @@
-﻿using HtmlBuilder.Enums;
+using HtmlBuilder.Enums;
 
 namespace HtmlBuilder.Tags.InteractiveTags;
 public class A() : DoubleTagWithContent("a")
@@ -30,5 +30,10 @@ public class A() : DoubleTagWithContent("a")
     {
         this.Target = target;
         this.AddAttribute("target", target.ToHtmlString());
+    }
+
+    public override void Accept(IHtmlVisitor visitor)
+    {
+        visitor.Visit(this);
     }
 }

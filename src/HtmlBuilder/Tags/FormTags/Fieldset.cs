@@ -1,4 +1,4 @@
-namespace HtmlBuilder.Tags.FormTags;
+﻿namespace HtmlBuilder.Tags.FormTags;
 public class Fieldset() : DoubleTagWithChildren("fieldset")
 {
     public string FieldsetName { get; set; } = string.Empty;
@@ -21,5 +21,10 @@ public class Fieldset() : DoubleTagWithChildren("fieldset")
     {
         this.IsDisabled = true;
         this.AddAttribute("disabled");
+    }
+
+    public override void Accept(IHtmlVisitor visitor)
+    {
+        visitor.Visit(this);
     }
 }

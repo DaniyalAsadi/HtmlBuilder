@@ -29,4 +29,9 @@ public class Th() : DoubleTagWithChildren("th")
         this.Scope = scope;
         this.AddAttribute("scope", scope);
     }
+
+    public override void Accept(IHtmlVisitor visitor)
+    {
+        visitor.Visit(this);
+    }
 }

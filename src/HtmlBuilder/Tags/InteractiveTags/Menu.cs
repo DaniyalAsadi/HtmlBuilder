@@ -15,4 +15,9 @@ public class Menu() : DoubleTagWithChildren("menu")
         Label = label;
         AddAttribute("label", label);
     }
+
+    public override void Accept(IHtmlVisitor visitor)
+    {
+        visitor.Visit(this);
+    }
 }

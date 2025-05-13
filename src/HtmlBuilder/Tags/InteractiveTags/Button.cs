@@ -1,4 +1,4 @@
-﻿using HtmlBuilder.Enums;
+using HtmlBuilder.Enums;
 
 namespace HtmlBuilder.Tags.InteractiveTags;
 public class Button() : DoubleTagWithContent("button")
@@ -23,5 +23,10 @@ public class Button() : DoubleTagWithContent("button")
     {
         Value = value;
         AddAttribute("value", value);
+    }
+
+    public override void Accept(IHtmlVisitor visitor)
+    {
+        visitor.Visit(this);
     }
 }

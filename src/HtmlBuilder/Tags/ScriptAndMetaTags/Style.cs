@@ -15,4 +15,9 @@ public class Style() : DoubleTagWithContent("style")
         this.Media = media;
         this.AddAttribute("media", media);
     }
+
+    public override void Accept(IHtmlVisitor visitor)
+    {
+        visitor.Visit(this);
+    }
 }

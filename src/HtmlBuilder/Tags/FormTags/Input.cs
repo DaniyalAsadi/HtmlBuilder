@@ -1,4 +1,4 @@
-﻿using HtmlBuilder.Enums;
+using HtmlBuilder.Enums;
 
 namespace HtmlBuilder.Tags.FormTags;
 public class Input() : SingleTag("input")
@@ -19,5 +19,10 @@ public class Input() : SingleTag("input")
     internal void AddRegex(string regex)
     {
         this.AddAttribute("pattern", regex);
+    }
+
+    public override void Accept(IHtmlVisitor visitor)
+    {
+        visitor.Visit(this);
     }
 }

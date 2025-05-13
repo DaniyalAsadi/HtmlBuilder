@@ -15,4 +15,9 @@ public class Html() : DoubleTagWithChildren("html")
         this.Manifest = manifestUrl;
         this.AddAttribute("manifest", manifestUrl);
     }
+
+    public override void Accept(IHtmlVisitor visitor)
+    {
+        visitor.Visit(this);
+    }
 }

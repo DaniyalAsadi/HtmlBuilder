@@ -1,4 +1,4 @@
-﻿using HtmlBuilder.Enums;
+using HtmlBuilder.Enums;
 
 namespace HtmlBuilder.Tags.ScriptAndMetaTags;
 public class Base() : SingleTag("base")
@@ -16,5 +16,10 @@ public class Base() : SingleTag("base")
     {
         this.Target = target;
         this.AddAttribute("target", target.ToHtmlString());
+    }
+
+    public override void Accept(IHtmlVisitor visitor)
+    {
+        visitor.Visit(this);
     }
 }

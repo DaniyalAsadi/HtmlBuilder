@@ -15,4 +15,9 @@ public class Output() : DoubleTagWithContent("output")
         this.For = @for;
         this.AddAttribute("form", @for);
     }
+
+    public override void Accept(IHtmlVisitor visitor)
+    {
+        visitor.Visit(this);
+    }
 }

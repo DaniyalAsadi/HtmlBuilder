@@ -8,4 +8,9 @@ public class Details() : DoubleTagWithChildren("details")
         IsOpen = true;
         AddAttribute("open");
     }
+
+    public override void Accept(IHtmlVisitor visitor)
+    {
+        visitor.Visit(this);
+    }
 }

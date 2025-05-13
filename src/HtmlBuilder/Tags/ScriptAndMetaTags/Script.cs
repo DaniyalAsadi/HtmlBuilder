@@ -29,4 +29,9 @@ public class Script() : DoubleTagWithContent("script")
         this.IsDefer = true;
         this.AddAttribute("defer");
     }
+
+    public override void Accept(IHtmlVisitor visitor)
+    {
+        visitor.Visit(this);
+    }
 }

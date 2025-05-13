@@ -1,4 +1,4 @@
-﻿using HtmlBuilder.Enums;
+using HtmlBuilder.Enums;
 
 namespace HtmlBuilder.Tags.MediaTags;
 public class Track() : SingleTag("track")
@@ -37,5 +37,10 @@ public class Track() : SingleTag("track")
     {
         IsDefault = true;
         AddAttribute("default");
+    }
+
+    public override void Accept(IHtmlVisitor visitor)
+    {
+        visitor.Visit(this);
     }
 }

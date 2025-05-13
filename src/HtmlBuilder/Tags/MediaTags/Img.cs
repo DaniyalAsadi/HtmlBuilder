@@ -29,4 +29,9 @@ public class Img() : SingleTag("img")
         this.Height = height;
         this.AddAttribute("height", height);
     }
+
+    public override void Accept(IHtmlVisitor visitor)
+    {
+        visitor.Visit(this);
+    }
 }

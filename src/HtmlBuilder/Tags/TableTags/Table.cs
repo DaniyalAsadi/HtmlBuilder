@@ -15,4 +15,9 @@ public class Table() : DoubleTagWithChildren("table")
         this.Summary = summary;
         this.AddAttribute("summary", summary);
     }
+
+    public override void Accept(IHtmlVisitor visitor)
+    {
+        visitor.Visit(this);
+    }
 }

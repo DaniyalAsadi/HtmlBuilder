@@ -8,4 +8,9 @@ public class Dialog() : DoubleTagWithChildren("dialog")
         IsOpen = true;
         AddAttribute("open");
     }
+
+    public override void Accept(IHtmlVisitor visitor)
+    {
+        visitor.Visit(this);
+    }
 }

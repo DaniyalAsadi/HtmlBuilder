@@ -1,5 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 using System.Text;
+
 [assembly: InternalsVisibleTo(assemblyName: "HtmlBuilder.Tests")]
 
 namespace HtmlBuilder;
@@ -45,6 +46,8 @@ public abstract class BaseTag(string name) : ITag
     /// <param name="level">The indentation level for rendering.</param>
     /// <returns>The rendered HTML string.</returns>
     public abstract string Render(int level);
+
+    public abstract void Accept(IHtmlVisitor visitor);
 
     /// <summary>
     /// Renders the attributes of the HTML tag as a string.

@@ -1,4 +1,4 @@
-﻿using HtmlBuilder.Enums;
+using HtmlBuilder.Enums;
 
 namespace HtmlBuilder.Tags.TextContentTag;
 public class Ol() : DoubleTagWithChildren("ol")
@@ -23,5 +23,10 @@ public class Ol() : DoubleTagWithChildren("ol")
     {
         this.Reversed = true;
         this.AddAttribute("reversed");
+    }
+
+    public override void Accept(IHtmlVisitor visitor)
+    {
+        visitor.Visit(this);
     }
 }
