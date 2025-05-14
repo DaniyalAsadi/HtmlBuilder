@@ -1,5 +1,5 @@
 namespace HtmlBuilder.Tags.StylingTags;
-public class Mark() : DoubleTagWithContent("mark")
+public class Mark() : DoubleHtmlElementWithContent("mark")
 {
     public override void Accept(IHtmlVisitor visitor)
     {

@@ -2,5 +2,5 @@
 
 public interface IHtmlRenderer
 {
-    string Render(BaseTag element);
+    string Render(IHtmlElement element);
 }

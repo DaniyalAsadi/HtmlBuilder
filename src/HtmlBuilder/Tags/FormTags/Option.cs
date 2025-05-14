@@ -1,5 +1,5 @@
-namespace HtmlBuilder.Tags.FormTags;
-public class Option() : DoubleTagWithContent("option")
+﻿namespace HtmlBuilder.Tags.FormTags;
+public class Option() : DoubleHtmlElementWithContent("option")
 {
     public string Value { get; private set; } = string.Empty;
     public bool IsSelected { get; private set; } = false;

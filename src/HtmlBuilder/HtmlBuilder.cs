@@ -14,13 +14,13 @@ namespace HtmlBuilder;
 public class HtmlBuilder
 {
     /// <summary>
-    /// Creates a new instance of the specified HTML tag type.
+    /// Creates a new instance of the specified HTML htmlElement type.
     /// </summary>
-    /// <typeparam name = "TTag">The type of the HTML tag to create. Must inherit from <see cref = "DoubleTagWithChildren"/> and have a parameterless constructor.</typeparam>
-    /// <param name = "creator">An optional action to configure the created tag.</param>
-    /// <returns>A new instance of the specified HTML tag type.</returns>
+    /// <typeparam name = "TTag">The type of the HTML htmlElement to create. Must inherit from <see cref = "DoubleHtmlElementWithChildren"/> and have a parameterless constructor.</typeparam>
+    /// <param name = "creator">An optional action to configure the created htmlElement.</param>
+    /// <returns>A new instance of the specified HTML htmlElement type.</returns>
     private static TTag Create<TTag>(Action<TTag>? creator = null)
-        where TTag : DoubleTagWithChildren, new()
+        where TTag : DoubleHtmlElementWithChildren, new()
     {
         if (creator is null)
         {

@@ -1,5 +1,5 @@
 namespace HtmlBuilder.Tags.InteractiveTags;
-public class Details() : DoubleTagWithChildren("details")
+public class Details() : DoubleHtmlElementWithChildren("details")
 {
     public bool IsOpen { get; private set; } = false;
 

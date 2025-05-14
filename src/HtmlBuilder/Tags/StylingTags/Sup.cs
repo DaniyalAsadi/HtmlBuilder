@@ -1,5 +1,5 @@
 namespace HtmlBuilder.Tags.StylingTags;
-public class Sup() : DoubleTagWithContent("sup")
+public class Sup() : DoubleHtmlElementWithContent("sup")
 {
     public override void Accept(IHtmlVisitor visitor)
     {

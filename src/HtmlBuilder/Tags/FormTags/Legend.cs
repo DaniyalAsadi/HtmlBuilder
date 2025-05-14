@@ -1,5 +1,5 @@
-namespace HtmlBuilder.Tags.FormTags;
-public class Legend() : DoubleTagWithContent("legend")
+﻿namespace HtmlBuilder.Tags.FormTags;
+public class Legend() : DoubleHtmlElementWithContent("legend")
 {
     public override void Accept(IHtmlVisitor visitor)
     {

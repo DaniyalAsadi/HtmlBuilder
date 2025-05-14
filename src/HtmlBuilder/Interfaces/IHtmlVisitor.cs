@@ -1,7 +1,7 @@
 ﻿namespace HtmlBuilder;
 public interface IHtmlVisitor
 {
-    void Visit(DoubleTagWithChildren tag);
-    void Visit(SingleTag tag);
-    void Visit(DoubleTagWithContent tag);
+    void Visit(DoubleHtmlElementWithChildren htmlElement);
+    void Visit(SingleHtmlElement htmlElement);
+    void Visit(DoubleHtmlElementWithContent htmlElement);
 }

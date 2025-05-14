@@ -1,5 +1,5 @@
 namespace HtmlBuilder.Tags.FormTags;
-public class Output() : DoubleTagWithContent("output")
+public class Output() : DoubleHtmlElementWithContent("output")
 {
     public string OutputName { get; private set; } = string.Empty;
     public string For { get; private set; } = string.Empty;

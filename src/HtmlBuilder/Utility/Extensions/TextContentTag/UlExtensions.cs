@@ -3,11 +3,11 @@ using System;
 namespace HtmlBuilder.Tags.TextContentTag;
 public static class UlExtensions
 {
-    public static DoubleTagWithChildren Ul(this DoubleTagWithChildren doubleTag, Action<Ul> action)
+    public static DoubleHtmlElementWithChildren Ul(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<Ul> action)
     {
         Ul tag = new Ul();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

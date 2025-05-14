@@ -9,11 +9,11 @@ public static class ColExtensions
         return tag;
     }
 
-    public static DoubleTagWithChildren Col(this DoubleTagWithChildren doubleTag, Action<Col> action)
+    public static DoubleHtmlElementWithChildren Col(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<Col> action)
     {
         Col tag = new Col();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

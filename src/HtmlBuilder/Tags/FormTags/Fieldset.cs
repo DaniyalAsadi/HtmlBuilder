@@ -1,5 +1,5 @@
 ﻿namespace HtmlBuilder.Tags.FormTags;
-public class Fieldset() : DoubleTagWithChildren("fieldset")
+public class Fieldset() : DoubleHtmlElementWithChildren("fieldset")
 {
     public string FieldsetName { get; set; } = string.Empty;
     public string Form { get; private set; } = string.Empty;

@@ -1,5 +1,5 @@
 namespace HtmlBuilder.Tags.ScriptAndMetaTags;
-public class Script() : DoubleTagWithContent("script")
+public class Script() : DoubleHtmlElementWithContent("script")
 {
     public string Src { get; private set; } = string.Empty;
     public string type { get; private set; } = "text/javascript";

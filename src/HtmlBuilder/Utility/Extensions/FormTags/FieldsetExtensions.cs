@@ -19,11 +19,11 @@ public static class FieldsetExtensions
         return tag;
     }
 
-    public static DoubleTagWithChildren Fieldset(this DoubleTagWithChildren doubleTag, Action<Fieldset> action)
+    public static DoubleHtmlElementWithChildren Fieldset(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<Fieldset> action)
     {
         Fieldset tag = new Fieldset();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

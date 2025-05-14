@@ -1,7 +1,7 @@
-using HtmlBuilder.Enums;
+﻿using HtmlBuilder.Enums;
 
 namespace HtmlBuilder.Tags.FormTags;
-public class Input() : SingleTag("input")
+public class Input() : SingleHtmlElement("input")
 {
     public InputType Type { get; set; }
 

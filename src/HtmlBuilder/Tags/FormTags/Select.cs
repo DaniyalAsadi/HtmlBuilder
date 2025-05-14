@@ -1,5 +1,5 @@
-namespace HtmlBuilder.Tags.FormTags;
-public class Select() : DoubleTagWithChildren("select")
+﻿namespace HtmlBuilder.Tags.FormTags;
+public class Select() : DoubleHtmlElementWithChildren("select")
 {
     public string SelectName { get; private set; } = string.Empty;
     public bool IsRequired { get; private set; } = false;

@@ -1,5 +1,5 @@
 namespace HtmlBuilder.Tags.FormTags;
-public class Label() : DoubleTagWithContent("label")
+public class Label() : DoubleHtmlElementWithContent("label")
 {
     public string For { get; private set; } = string.Empty;
 

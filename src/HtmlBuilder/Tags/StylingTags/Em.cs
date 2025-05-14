@@ -1,5 +1,5 @@
 namespace HtmlBuilder.Tags.StylingTags;
-public class Em() : DoubleTagWithContent("em")
+public class Em() : DoubleHtmlElementWithContent("em")
 {
     public override void Accept(IHtmlVisitor visitor)
     {

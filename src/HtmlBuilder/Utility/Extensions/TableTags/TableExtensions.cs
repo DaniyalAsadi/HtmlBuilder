@@ -15,11 +15,11 @@ public static class TableExtensions
         return tag;
     }
 
-    public static DoubleTagWithChildren Table(this DoubleTagWithChildren doubleTag, Action<Table> action)
+    public static DoubleHtmlElementWithChildren Table(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<Table> action)
     {
         Table tag = new Table();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

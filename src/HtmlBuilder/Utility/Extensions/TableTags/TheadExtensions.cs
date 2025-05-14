@@ -3,11 +3,11 @@ using System;
 namespace HtmlBuilder.Tags.TableTags;
 public static class TheadExtensions
 {
-    public static DoubleTagWithChildren Thead(this DoubleTagWithChildren doubleTag, Action<Thead> action)
+    public static DoubleHtmlElementWithChildren Thead(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<Thead> action)
     {
         Thead tag = new Thead();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

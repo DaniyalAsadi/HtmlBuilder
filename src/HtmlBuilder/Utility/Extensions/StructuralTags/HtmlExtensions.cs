@@ -15,11 +15,11 @@ public static class HtmlExtensions
         return tag;
     }
 
-    public static DoubleTagWithChildren Html(this DoubleTagWithChildren doubleTag, Action<Html> action)
+    public static DoubleHtmlElementWithChildren Html(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<Html> action)
     {
         Html tag = new Html();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

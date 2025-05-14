@@ -31,11 +31,11 @@ public static class SelectExtensions
         return tag;
     }
 
-    public static DoubleTagWithChildren Select(this DoubleTagWithChildren doubleTag, Action<Select> action)
+    public static DoubleHtmlElementWithChildren Select(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<Select> action)
     {
         Select tag = new Select();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

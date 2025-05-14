@@ -7,11 +7,11 @@ public static class DetailsExtensions
         return tag;
     }
 
-    public static DoubleTagWithChildren Details(this DoubleTagWithChildren doubleTag, Action<Details> action)
+    public static DoubleHtmlElementWithChildren Details(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<Details> action)
     {
         Details tag = new Details();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

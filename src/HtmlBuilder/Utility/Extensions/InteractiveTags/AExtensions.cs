@@ -27,11 +27,11 @@ public static class AExtensions
         return tag;
     }
 
-    public static DoubleTagWithChildren A(this DoubleTagWithChildren doubleTag, Action<A> action)
+    public static DoubleHtmlElementWithChildren A(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<A> action)
     {
         A tag = new A();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

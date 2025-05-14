@@ -7,11 +7,11 @@ public static class DialogExtensions
         return tag;
     }
 
-    public static DoubleTagWithChildren Dialog(this DoubleTagWithChildren doubleTag, Action<Dialog> action)
+    public static DoubleHtmlElementWithChildren Dialog(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<Dialog> action)
     {
         Dialog tag = new Dialog();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

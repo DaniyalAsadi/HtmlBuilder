@@ -25,11 +25,11 @@ public static class OptionExtensions
         return tag;
     }
 
-    public static DoubleTagWithChildren Option(this DoubleTagWithChildren doubleTag, Action<Option> action)
+    public static DoubleHtmlElementWithChildren Option(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<Option> action)
     {
         Option tag = new Option();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

@@ -15,11 +15,11 @@ public static class StyleExtensions
         return tag;
     }
 
-    public static DoubleTagWithChildren Style(this DoubleTagWithChildren doubleTag, Action<Style> action)
+    public static DoubleHtmlElementWithChildren Style(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<Style> action)
     {
         Style tag = new Style();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

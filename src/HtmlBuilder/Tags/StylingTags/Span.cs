@@ -1,5 +1,5 @@
 namespace HtmlBuilder.Tags.StylingTags;
-public class Span() : DoubleTagWithChildren("span")
+public class Span() : DoubleHtmlElementWithChildren("span")
 {
     public override void Accept(IHtmlVisitor visitor)
     {

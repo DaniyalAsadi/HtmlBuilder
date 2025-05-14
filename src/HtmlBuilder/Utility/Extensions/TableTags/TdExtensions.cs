@@ -21,11 +21,11 @@ public static class TdExtensions
         return tag;
     }
 
-    public static DoubleTagWithChildren Td(this DoubleTagWithChildren doubleTag, Action<Td> action)
+    public static DoubleHtmlElementWithChildren Td(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<Td> action)
     {
         Td tag = new Td();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

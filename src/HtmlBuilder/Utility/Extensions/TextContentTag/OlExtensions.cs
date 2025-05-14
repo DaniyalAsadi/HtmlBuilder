@@ -19,11 +19,11 @@ public static class OlExtensions
         return tag;
     }
 
-    public static DoubleTagWithChildren Ol(this DoubleTagWithChildren doubleTag, Action<Ol> action)
+    public static DoubleHtmlElementWithChildren Ol(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<Ol> action)
     {
         Ol tag = new Ol();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

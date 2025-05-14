@@ -1,5 +1,5 @@
 namespace HtmlBuilder.Tags.TableTags;
-public class Th() : DoubleTagWithChildren("th")
+public class Th() : DoubleHtmlElementWithChildren("th")
 {
     public int Colspan { get; private set; }
     public int Rowspan { get; private set; }

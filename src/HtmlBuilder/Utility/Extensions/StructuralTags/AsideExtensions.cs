@@ -3,11 +3,11 @@ using System;
 namespace HtmlBuilder.Tags.StructuralTags;
 public static class AsideExtensions
 {
-    public static DoubleTagWithChildren Aside(this DoubleTagWithChildren doubleTag, Action<Aside> action)
+    public static DoubleHtmlElementWithChildren Aside(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<Aside> action)
     {
         Aside tag = new Aside();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

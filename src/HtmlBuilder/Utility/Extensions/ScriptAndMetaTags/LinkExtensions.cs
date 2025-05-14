@@ -21,11 +21,11 @@ public static class LinkExtensions
         return tag;
     }
 
-    public static DoubleTagWithChildren Link(this DoubleTagWithChildren doubleTag, Action<Link> action)
+    public static DoubleHtmlElementWithChildren Link(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<Link> action)
     {
         Link tag = new Link();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

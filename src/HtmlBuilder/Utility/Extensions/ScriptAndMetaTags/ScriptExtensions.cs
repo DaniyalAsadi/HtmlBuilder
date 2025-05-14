@@ -25,11 +25,11 @@ public static class ScriptExtensions
         return tag;
     }
 
-    public static DoubleTagWithChildren Script(this DoubleTagWithChildren doubleTag, Action<Script> action)
+    public static DoubleHtmlElementWithChildren Script(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<Script> action)
     {
         Script tag = new Script();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

@@ -15,11 +15,11 @@ public static class SourceExtensions
         return tag;
     }
 
-    public static DoubleTagWithChildren Source(this DoubleTagWithChildren doubleTag, Action<Source> action)
+    public static DoubleHtmlElementWithChildren Source(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<Source> action)
     {
         Source tag = new Source();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

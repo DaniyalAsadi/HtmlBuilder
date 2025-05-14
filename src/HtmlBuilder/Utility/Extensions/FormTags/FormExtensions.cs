@@ -33,11 +33,11 @@ public static class FormExtensions
         return tag;
     }
 
-    public static DoubleTagWithChildren Form(this DoubleTagWithChildren doubleTag, Action<Form> action)
+    public static DoubleHtmlElementWithChildren Form(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<Form> action)
     {
         Form tag = new Form();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

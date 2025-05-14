@@ -21,11 +21,11 @@ public static class ButtonExtensions
         return tag;
     }
 
-    public static DoubleTagWithChildren Button(this DoubleTagWithChildren doubleTag, Action<Button> action)
+    public static DoubleHtmlElementWithChildren Button(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<Button> action)
     {
         Button tag = new Button();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

@@ -3,11 +3,11 @@ using System;
 namespace HtmlBuilder.Tags.TextContentTag;
 public static class DlExtensions
 {
-    public static DoubleTagWithChildren Dl(this DoubleTagWithChildren doubleTag, Action<Dl> action)
+    public static DoubleHtmlElementWithChildren Dl(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<Dl> action)
     {
         Dl tag = new Dl();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

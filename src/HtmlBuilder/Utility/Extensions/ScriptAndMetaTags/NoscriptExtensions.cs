@@ -3,11 +3,11 @@ using System;
 namespace HtmlBuilder.Tags.ScriptAndMetaTags;
 public static class NoscriptExtensions
 {
-    public static DoubleTagWithChildren Noscript(this DoubleTagWithChildren doubleTag, Action<Noscript> action)
+    public static DoubleHtmlElementWithChildren Noscript(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<Noscript> action)
     {
         Noscript tag = new Noscript();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

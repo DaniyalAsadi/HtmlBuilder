@@ -1,5 +1,5 @@
 namespace HtmlBuilder.Tags.StructuralTags;
-public class Aside() : DoubleTagWithChildren("aside")
+public class Aside() : DoubleHtmlElementWithChildren("aside")
 {
     public override void Accept(IHtmlVisitor visitor)
     {

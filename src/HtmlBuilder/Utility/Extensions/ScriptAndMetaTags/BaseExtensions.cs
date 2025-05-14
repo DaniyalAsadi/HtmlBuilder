@@ -15,11 +15,11 @@ public static class BaseExtensions
         return tag;
     }
 
-    public static DoubleTagWithChildren Base(this DoubleTagWithChildren doubleTag, Action<Base> action)
+    public static DoubleHtmlElementWithChildren Base(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<Base> action)
     {
         Base tag = new Base();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

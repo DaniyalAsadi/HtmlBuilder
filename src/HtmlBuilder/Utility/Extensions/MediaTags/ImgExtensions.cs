@@ -27,11 +27,11 @@ public static class ImgExtensions
         return tag;
     }
 
-    public static DoubleTagWithChildren Img(this DoubleTagWithChildren doubleTag, Action<Img> action)
+    public static DoubleHtmlElementWithChildren Img(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<Img> action)
     {
         Img tag = new Img();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

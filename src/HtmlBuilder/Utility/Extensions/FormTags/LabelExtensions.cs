@@ -9,11 +9,11 @@ public static class LabelExtensions
         return tag;
     }
 
-    public static DoubleTagWithChildren Label(this DoubleTagWithChildren doubleTag, Action<Label> action)
+    public static DoubleHtmlElementWithChildren Label(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<Label> action)
     {
         Label tag = new Label();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

@@ -9,11 +9,11 @@ public static class LiExtensions
         return tag;
     }
 
-    public static DoubleTagWithChildren Li(this DoubleTagWithChildren doubleTag, Action<Li> action)
+    public static DoubleHtmlElementWithChildren Li(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<Li> action)
     {
         Li tag = new Li();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

@@ -3,11 +3,11 @@ using System;
 namespace HtmlBuilder.Tags.StylingTags;
 public static class IExtensions
 {
-    public static DoubleTagWithChildren I(this DoubleTagWithChildren doubleTag, Action<I> action)
+    public static DoubleHtmlElementWithChildren I(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<I> action)
     {
         I tag = new I();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

@@ -1,5 +1,5 @@
 namespace HtmlBuilder.Tags.MediaTags;
-public class Audio() : DoubleTagWithChildren("audio")
+public class Audio() : DoubleHtmlElementWithChildren("audio")
 {
     public string Src { get; private set; } = string.Empty;
     public bool Controls { get; private set; } = false;

@@ -1,5 +1,5 @@
 namespace HtmlBuilder.Tags.TextContentTag;
-public class Blockquote() : DoubleTagWithContent("blockquote")
+public class Blockquote() : DoubleHtmlElementWithContent("blockquote")
 {
     public string Cite { get; private set; } = string.Empty;
 

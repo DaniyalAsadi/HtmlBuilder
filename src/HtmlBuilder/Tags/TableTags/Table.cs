@@ -1,5 +1,5 @@
 namespace HtmlBuilder.Tags.TableTags;
-public class Table() : DoubleTagWithChildren("table")
+public class Table() : DoubleHtmlElementWithChildren("table")
 {
     public int Border { get; private set; }
     public string Summary { get; private set; } = string.Empty;

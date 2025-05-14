@@ -3,11 +3,11 @@ using System;
 namespace HtmlBuilder.Tags.StylingTags;
 public static class SupExtensions
 {
-    public static DoubleTagWithChildren Sup(this DoubleTagWithChildren doubleTag, Action<Sup> action)
+    public static DoubleHtmlElementWithChildren Sup(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<Sup> action)
     {
         Sup tag = new Sup();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

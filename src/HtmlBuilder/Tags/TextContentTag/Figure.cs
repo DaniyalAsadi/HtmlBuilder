@@ -1,5 +1,5 @@
 namespace HtmlBuilder.Tags.TextContentTag;
-public class Figure() : DoubleTagWithChildren("figure")
+public class Figure() : DoubleHtmlElementWithChildren("figure")
 {
     public override void Accept(IHtmlVisitor visitor)
     {

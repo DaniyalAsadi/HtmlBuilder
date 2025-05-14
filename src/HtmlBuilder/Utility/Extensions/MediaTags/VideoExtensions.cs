@@ -43,11 +43,11 @@ public static class VideoExtensions
         return tag;
     }
 
-    public static DoubleTagWithChildren Video(this DoubleTagWithChildren doubleTag, Action<Video> action)
+    public static DoubleHtmlElementWithChildren Video(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<Video> action)
     {
         Video tag = new Video();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

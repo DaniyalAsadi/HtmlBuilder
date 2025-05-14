@@ -3,11 +3,11 @@ using System;
 namespace HtmlBuilder.Tags.StructuralTags;
 public static class SectionExtensions
 {
-    public static DoubleTagWithChildren Section(this DoubleTagWithChildren doubleTag, Action<Section> action)
+    public static DoubleHtmlElementWithChildren Section(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<Section> action)
     {
         Section tag = new Section();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

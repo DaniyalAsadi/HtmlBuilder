@@ -1,5 +1,5 @@
 namespace HtmlBuilder.Tags.MediaTags;
-public class Video() : DoubleTagWithChildren("video")
+public class Video() : DoubleHtmlElementWithChildren("video")
 {
     public string Src { get; private set; } = string.Empty;
     public bool Controls { get; private set; } = false;

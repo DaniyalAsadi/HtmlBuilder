@@ -33,11 +33,11 @@ public static class TrackExtensions
         return tag;
     }
 
-    public static DoubleTagWithChildren Track(this DoubleTagWithChildren doubleTag, Action<Track> action)
+    public static DoubleHtmlElementWithChildren Track(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<Track> action)
     {
         Track tag = new Track();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

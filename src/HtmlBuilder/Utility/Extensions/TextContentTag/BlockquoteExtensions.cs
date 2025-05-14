@@ -9,11 +9,11 @@ public static class BlockquoteExtensions
         return tag;
     }
 
-    public static DoubleTagWithChildren Blockquote(this DoubleTagWithChildren doubleTag, Action<Blockquote> action)
+    public static DoubleHtmlElementWithChildren Blockquote(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<Blockquote> action)
     {
         Blockquote tag = new Blockquote();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

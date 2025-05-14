@@ -3,11 +3,11 @@ using System;
 namespace HtmlBuilder.Tags.TextContentTag;
 public static class FigureExtensions
 {
-    public static DoubleTagWithChildren Figure(this DoubleTagWithChildren doubleTag, Action<Figure> action)
+    public static DoubleHtmlElementWithChildren Figure(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<Figure> action)
     {
         Figure tag = new Figure();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

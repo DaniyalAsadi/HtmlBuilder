@@ -1,5 +1,5 @@
 namespace HtmlBuilder.Tags.TextContentTag;
-public class Dd() : DoubleTagWithContent("dd")
+public class Dd() : DoubleHtmlElementWithContent("dd")
 {
     public override void Accept(IHtmlVisitor visitor)
     {

@@ -1,5 +1,5 @@
 namespace HtmlBuilder.Tags.TableTags;
-public class Col() : SingleTag("col")
+public class Col() : SingleHtmlElement("col")
 {
     public int Span { get; private set; }
 

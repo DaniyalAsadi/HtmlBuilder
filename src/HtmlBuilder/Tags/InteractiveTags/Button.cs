@@ -1,7 +1,7 @@
 using HtmlBuilder.Enums;
 
 namespace HtmlBuilder.Tags.InteractiveTags;
-public class Button() : DoubleTagWithContent("button")
+public class Button() : DoubleHtmlElementWithContent("button")
 {
     public bool IsDisabled { get; private set; } = false;
     public ButtonType Type { get; private set; } = ButtonType.Submit;

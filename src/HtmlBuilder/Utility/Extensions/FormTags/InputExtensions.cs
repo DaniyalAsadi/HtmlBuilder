@@ -21,11 +21,11 @@ public static class InputExtensions
         return tag;
     }
 
-    public static DoubleTagWithChildren Input(this DoubleTagWithChildren doubleTag, Action<Input> action)
+    public static DoubleHtmlElementWithChildren Input(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<Input> action)
     {
         Input tag = new Input();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

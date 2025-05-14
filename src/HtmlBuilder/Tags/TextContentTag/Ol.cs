@@ -1,7 +1,7 @@
 using HtmlBuilder.Enums;
 
 namespace HtmlBuilder.Tags.TextContentTag;
-public class Ol() : DoubleTagWithChildren("ol")
+public class Ol() : DoubleHtmlElementWithChildren("ol")
 {
     public OlType Type { get; private set; }
     public int Start { get; private set; } = 1;

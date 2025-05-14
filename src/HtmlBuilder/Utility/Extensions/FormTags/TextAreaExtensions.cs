@@ -37,11 +37,11 @@ public static class TextAreaExtensions
         return tag;
     }
 
-    public static DoubleTagWithChildren Textarea(this DoubleTagWithChildren doubleTag, Action<Textarea> action)
+    public static DoubleHtmlElementWithChildren Textarea(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<Textarea> action)
     {
         Textarea tag = new Textarea();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

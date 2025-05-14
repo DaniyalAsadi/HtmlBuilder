@@ -1,5 +1,5 @@
 namespace HtmlBuilder.Tags.StructuralTags;
-public class Footer() : DoubleTagWithChildren("footer")
+public class Footer() : DoubleHtmlElementWithChildren("footer")
 {
     public override void Accept(IHtmlVisitor visitor)
     {

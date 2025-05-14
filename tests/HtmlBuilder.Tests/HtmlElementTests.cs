@@ -1,8 +1,8 @@
 ﻿namespace HtmlBuilder.Tests
 {
-    public class BaseTagTests
+    public class HtmlElementTests
     {
-        private class TestTag(string name) : BaseTag(name)
+        private class TestHtmlElement(string name) : HtmlElement(name)
         {
             public override void Accept(IHtmlVisitor visitor)
             {
@@ -14,7 +14,7 @@
         public void Constructor_ShouldSetName()
         {
             // Arrange & Act
-            var tag = new TestTag("div");
+            var tag = new TestHtmlElement("div");
 
             // Assert
             Assert.Equal("div", tag.Name);
@@ -24,7 +24,7 @@
         public void AddAttribute_ShouldAddAttributeToAttributesCollection()
         {
             // Arrange
-            var tag = new TestTag("div");
+            var tag = new TestHtmlElement("div");
 
             // Act
             tag.AddAttribute("key", "value");
@@ -38,7 +38,7 @@
         public void AddAttribute_ShouldAddAttributeWithNullValue()
         {
             // Arrange
-            var tag = new TestTag("div");
+            var tag = new TestHtmlElement("div");
 
             // Act
             tag.AddAttribute("key");
@@ -52,7 +52,7 @@
         public void AddAttributes_ShouldAddMultipleAttributes()
         {
             // Arrange
-            var tag = new TestTag("div");
+            var tag = new TestHtmlElement("div");
             var attributes = new Dictionary<string, string?>
             {
                 { "key1", "value1" },
@@ -71,7 +71,7 @@
         public void SetId_ShouldSetIdAttribute()
         {
             // Arrange
-            var tag = new TestTag("div");
+            var tag = new TestHtmlElement("div");
 
             // Act
             tag.SetId("test-id");
@@ -84,7 +84,7 @@
         public void AddClass_ShouldAddClassToClassesCollection()
         {
             // Arrange
-            var tag = new TestTag("div");
+            var tag = new TestHtmlElement("div");
 
             // Act
             tag.AddClass("test-class");
@@ -97,7 +97,7 @@
         public void RenderAttributes_ShouldRenderAttributesCorrectly()
         {
             // Arrange
-            var tag = new TestTag("div");
+            var tag = new TestHtmlElement("div");
             tag.AddAttribute("key1", "value1");
             tag.AddAttribute("key2");
 

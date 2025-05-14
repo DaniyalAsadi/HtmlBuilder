@@ -15,11 +15,11 @@ public static class OutputExtensions
         return tag;
     }
 
-    public static DoubleTagWithChildren Output(this DoubleTagWithChildren doubleTag, Action<Output> action)
+    public static DoubleHtmlElementWithChildren Output(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<Output> action)
     {
         Output tag = new Output();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

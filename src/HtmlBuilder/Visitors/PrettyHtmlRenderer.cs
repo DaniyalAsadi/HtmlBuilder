@@ -7,43 +7,43 @@ internal sealed class PrettyHtmlRenderer : IHtmlVisitor, IHtmlRenderer
     private int _indentLevel = 0;
     private const int IndentSize = 4;
 
-    public string Render(BaseTag tag)
+    public string Render(IHtmlElement htmlElement)
     {
         _sb.Clear();
-        tag.Accept(this);
+        htmlElement.Accept(this);
         return _sb.ToString();
     }
-    public void Visit(DoubleTagWithChildren tag)
+    public void Visit(DoubleHtmlElementWithChildren htmlElement)
     {
-        WriteOpeningTag(tag.Name, tag.RenderAttributes());
+        WriteOpeningTag(htmlElement.Name, htmlElement.RenderAttributes());
 
         _indentLevel++;
-        foreach (var child in tag.Children)
+        foreach (var child in htmlElement.Children)
         {
             child.Accept(this);
         }
         _indentLevel--;
 
-        WriteClosingTag(tag.Name);
+        WriteClosingTag(htmlElement.Name);
     }
 
-    public void Visit(SingleTag tag)
+    public void Visit(SingleHtmlElement htmlElement)
     {
-        WriteSelfClosingTag(tag.Name, tag.RenderAttributes());
+        WriteSelfClosingTag(htmlElement.Name, htmlElement.RenderAttributes());
     }
 
-    public void Visit(DoubleTagWithContent tag)
+    public void Visit(DoubleHtmlElementWithContent htmlElement)
     {
         var indent = Indent();
         _sb.Append(indent)
-            .Append('<').Append(tag.Name).Append(tag.RenderAttributes()).Append('>');
+            .Append('<').Append(htmlElement.Name).Append(htmlElement.RenderAttributes()).Append('>');
 
-        if (!string.IsNullOrWhiteSpace(tag.Content))
+        if (!string.IsNullOrWhiteSpace(htmlElement.Content))
         {
-            _sb.Append(tag.Content);
+            _sb.Append(htmlElement.Content);
         }
 
-        _sb.Append("</").Append(tag.Name).AppendLine(">");
+        _sb.Append("</").Append(htmlElement.Name).AppendLine(">");
     }
 
     private void WriteOpeningTag(string tagName, string attributes)

@@ -1,7 +1,7 @@
 using HtmlBuilder.Enums;
 
 namespace HtmlBuilder.Tags.FormTags;
-public class Form() : DoubleTagWithChildren("form")
+public class Form() : DoubleHtmlElementWithChildren("form")
 {
     public string Action { get; private set; } = string.Empty;
     public FormMethod Method { get; private set; } = FormMethod.Get;

@@ -31,11 +31,11 @@ public static class AudioExtensions
         return tag;
     }
 
-    public static DoubleTagWithChildren Audio(this DoubleTagWithChildren doubleTag, Action<Audio> action)
+    public static DoubleHtmlElementWithChildren Audio(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<Audio> action)
     {
         Audio tag = new Audio();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

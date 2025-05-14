@@ -31,11 +31,11 @@ public static class IframeExtensions
         return tag;
     }
 
-    public static DoubleTagWithChildren Iframe(this DoubleTagWithChildren doubleTag, Action<Iframe> action)
+    public static DoubleHtmlElementWithChildren Iframe(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<Iframe> action)
     {
         Iframe tag = new Iframe();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

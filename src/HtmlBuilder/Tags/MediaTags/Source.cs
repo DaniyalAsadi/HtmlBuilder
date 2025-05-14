@@ -1,5 +1,5 @@
 namespace HtmlBuilder.Tags.MediaTags;
-public class Source() : SingleTag("source")
+public class Source() : SingleHtmlElement("source")
 {
     public string Src { get; private set; } = string.Empty;
     public string Type { get; private set; } = string.Empty;

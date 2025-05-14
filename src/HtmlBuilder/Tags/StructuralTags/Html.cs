@@ -1,5 +1,5 @@
 namespace HtmlBuilder.Tags.StructuralTags;
-public class Html() : DoubleTagWithChildren("html")
+public class Html() : DoubleHtmlElementWithChildren("html")
 {
     public string Lang { get; private set; } = string.Empty;
     public string Manifest { get; private set; } = string.Empty;

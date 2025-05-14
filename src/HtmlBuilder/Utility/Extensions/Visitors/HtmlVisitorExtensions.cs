@@ -4,20 +4,20 @@ namespace HtmlBuilder.Utility.Extensions.Visitors;
 public static class HtmlVisitorExtensions
 {
     /// <summary>
-    /// To render the HTML tag in pretty Format
+    /// To render the HTML htmlElement in pretty Format
     /// </summary>
-    public static string ToPrettyHtml(this BaseTag tag)
+    public static string ToPrettyHtml(this HtmlElement htmlElement)
     {
         IHtmlRenderer renderer = new PrettyHtmlRenderer();
 
-        return renderer.Render(tag);
+        return renderer.Render(htmlElement);
     }
     /// <summary>
-    /// To render the HTML tag in minimal Format
+    /// To render the HTML htmlElement in minimal Format
     /// </summary>
-    public static string ToMinimalHtml(this BaseTag tag)
+    public static string ToMinimalHtml(this HtmlElement htmlElement)
     {
         IHtmlRenderer renderer = new MinimalHtmlRenderer();
-        return renderer.Render(tag);
+        return renderer.Render(htmlElement);
     }
 }

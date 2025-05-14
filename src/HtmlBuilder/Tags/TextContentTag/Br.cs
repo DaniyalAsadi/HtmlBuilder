@@ -1,5 +1,5 @@
 namespace HtmlBuilder.Tags.TextContentTag;
-public class Br() : SingleTag("br")
+public class Br() : SingleHtmlElement("br")
 {
     public override void Accept(IHtmlVisitor visitor)
     {

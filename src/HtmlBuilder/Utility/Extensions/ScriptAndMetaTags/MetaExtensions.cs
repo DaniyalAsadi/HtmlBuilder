@@ -27,11 +27,11 @@ public static class MetaExtensions
         return tag;
     }
 
-    public static DoubleTagWithChildren Meta(this DoubleTagWithChildren doubleTag, Action<Meta> action)
+    public static DoubleHtmlElementWithChildren Meta(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<Meta> action)
     {
         Meta tag = new Meta();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

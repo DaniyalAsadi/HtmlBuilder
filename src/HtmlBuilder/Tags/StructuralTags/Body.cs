@@ -1,5 +1,5 @@
 namespace HtmlBuilder.Tags.StructuralTags;
-public class Body() : DoubleTagWithChildren("body")
+public class Body() : DoubleHtmlElementWithChildren("body")
 {
     public override void Accept(IHtmlVisitor visitor)
     {

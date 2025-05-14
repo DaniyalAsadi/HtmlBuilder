@@ -1,5 +1,5 @@
 namespace HtmlBuilder.Tags.InteractiveTags;
-public class Menu() : DoubleTagWithChildren("menu")
+public class Menu() : DoubleHtmlElementWithChildren("menu")
 {
     public string Type { get; private set; } = string.Empty;
     public string Label { get; private set; } = string.Empty;

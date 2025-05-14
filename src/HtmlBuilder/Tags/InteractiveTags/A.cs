@@ -1,7 +1,7 @@
 using HtmlBuilder.Enums;
 
 namespace HtmlBuilder.Tags.InteractiveTags;
-public class A() : DoubleTagWithContent("a")
+public class A() : DoubleHtmlElementWithContent("a")
 {
     public string Href { get; private set; } = string.Empty;
     public string Rel { get; private set; } = string.Empty;

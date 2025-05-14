@@ -1,5 +1,5 @@
 namespace HtmlBuilder.Tags.MediaTags;
-public class Iframe() : SingleTag("iframe")
+public class Iframe() : SingleHtmlElement("iframe")
 {
     public string Src { get; private set; } = string.Empty;
     public string Width { get; private set; }

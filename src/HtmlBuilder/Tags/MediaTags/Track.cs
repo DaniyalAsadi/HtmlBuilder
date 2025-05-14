@@ -1,7 +1,7 @@
 using HtmlBuilder.Enums;
 
 namespace HtmlBuilder.Tags.MediaTags;
-public class Track() : SingleTag("track")
+public class Track() : SingleHtmlElement("track")
 {
     public string Src { get; private set; } = string.Empty;
     public TrackKind Kind { get; private set; } = TrackKind.Subtitles;

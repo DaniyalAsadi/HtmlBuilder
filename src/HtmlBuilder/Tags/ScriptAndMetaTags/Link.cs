@@ -1,5 +1,5 @@
 namespace HtmlBuilder.Tags.ScriptAndMetaTags;
-public class Link() : SingleTag("link")
+public class Link() : SingleHtmlElement("link")
 {
     public string Rel { get; private set; } = string.Empty;
     public string Type { get; private set; } = "text/css";

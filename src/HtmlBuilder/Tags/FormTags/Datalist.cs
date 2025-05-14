@@ -1,5 +1,5 @@
 namespace HtmlBuilder.Tags.FormTags;
-public class Datalist() : DoubleTagWithChildren("datalist")
+public class Datalist() : DoubleHtmlElementWithChildren("datalist")
 {
     public override void Accept(IHtmlVisitor visitor)
     {

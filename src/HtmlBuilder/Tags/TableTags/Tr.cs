@@ -1,5 +1,5 @@
 namespace HtmlBuilder.Tags.TableTags;
-public class Tr() : DoubleTagWithChildren("tr")
+public class Tr() : DoubleHtmlElementWithChildren("tr")
 {
     public override void Accept(IHtmlVisitor visitor)
     {

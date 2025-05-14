@@ -1,5 +1,5 @@
 namespace HtmlBuilder.Tags.MediaTags;
-public class Img() : SingleTag("img")
+public class Img() : SingleHtmlElement("img")
 {
     public string Src { get; private set; } = string.Empty;
     public string Alt { get; private set; } = string.Empty;

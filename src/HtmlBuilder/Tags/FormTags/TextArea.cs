@@ -1,5 +1,5 @@
-namespace HtmlBuilder.Tags.FormTags;
-public class Textarea() : DoubleTagWithContent("textarea")
+﻿namespace HtmlBuilder.Tags.FormTags;
+public class Textarea() : DoubleHtmlElementWithContent("textarea")
 {
     public string TextareaName { get; private set; } = string.Empty;
     public string Placeholder { get; private set; } = string.Empty;

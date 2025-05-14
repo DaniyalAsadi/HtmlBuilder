@@ -3,11 +3,11 @@ using System;
 namespace HtmlBuilder.Tags.TableTags;
 public static class TrExtensions
 {
-    public static DoubleTagWithChildren Tr(this DoubleTagWithChildren doubleTag, Action<Tr> action)
+    public static DoubleHtmlElementWithChildren Tr(this DoubleHtmlElementWithChildren doubleHtmlElement, Action<Tr> action)
     {
         Tr tag = new Tr();
         action(tag);
-        doubleTag.AddChild(tag);
-        return doubleTag;
+        doubleHtmlElement.AddChild(tag);
+        return doubleHtmlElement;
     }
 }

@@ -1,5 +1,5 @@
 namespace HtmlBuilder.Tags.ScriptAndMetaTags;
-public class Meta() : SingleTag("meta")
+public class Meta() : SingleHtmlElement("meta")
 {
     public string MetaName { get; private set; } = string.Empty;
     public string Content { get; private set; } = string.Empty;
