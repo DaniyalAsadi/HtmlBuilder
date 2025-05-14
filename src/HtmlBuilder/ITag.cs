@@ -10,12 +10,5 @@ public interface ITag
     /// </summary>
     string Name { get; }
 
-    /// <summary>
-    /// Adds an attribute to the HTML tag.
-    /// </summary>
-    /// <param name="key">The name of the attribute.</param>
-    /// <param name="value">The value of the attribute.</param>
-    /// <returns>The current instance of <see cref="ITag"/> for method chaining.</returns>
-    ITag AddAttribute(string key, string value);
 
 }

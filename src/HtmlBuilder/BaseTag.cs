@@ -34,7 +34,7 @@ public abstract class BaseTag(string name) : ITag
     /// <param name="key">The name of the attribute.</param>
     /// <param name="value">The value of the attribute. Defaults to null.</param>
     /// <returns>The current instance of the tag.</returns>
-    public ITag AddAttribute(string key, string? value = null)
+    public BaseTag AddAttribute(string key, string? value = null)
     {
         Attributes[key] = value;
         return this;
