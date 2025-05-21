@@ -6,12 +6,17 @@
     <Nullable>enable</Nullable>
 	  <!-- Metadata for NuGet Package -->
 	  <PackageId>FluentHtmlBuilder</PackageId>
-	  <Version>1.0.1</Version>
+	  <Version>1.0.2</Version>
 	  <Authors>Daniyal Asadi</Authors>
 	  <Description>A library for building HTML tags programmatically in .NET.</Description>
 	  <PackageTags>HTML;HTML-builder;HTML-generator;C#;Csharp;.NET;Web-development;NuGet;Tag-generator;Dynamic-HTML</PackageTags>
 	  <RepositoryUrl>https://github.com/DaniyalAsadi/HtmlBuilder</RepositoryUrl>
 	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	  <PackageReadmeFile>README.md</PackageReadmeFile>
+	  <PackageProjectUrl>https://github.com/DaniyalAsadi/HtmlBuilder</PackageProjectUrl>
+	  <NeutralLanguage>en-US</NeutralLanguage>
+	  <PackageLicenseFile>LICENSE</PackageLicenseFile>
+	  <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
 
@@ -22,6 +27,18 @@
     <Folder Include="Tags\ScriptAndMetaTags\" />
     <Folder Include="Tags\StylingTags\" />
     <Folder Include="Tags\TableTags\" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
