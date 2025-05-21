@@ -1,4 +1,9 @@
 ﻿namespace HtmlBuilder.Enums;
+/// <summary>
+/// Provides extension methods for the <see cref="BaseTarget"/> enumeration.
+/// </summary>
+/// <remarks>This class includes methods to facilitate working with <see cref="BaseTarget"/> values, such as
+/// converting them to their corresponding string representations.</remarks>
 internal static class BaseTargetExtensions
 {
     /// <summary>
